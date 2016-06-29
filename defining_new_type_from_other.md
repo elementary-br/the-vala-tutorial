@@ -8,9 +8,9 @@ Defining a new type is a matter of deriving it from the one you need. Here is an
 
 /* Define a new type from a container like GLib.List with elements type GLib.Value */
 public class ValueList : GLib.List<GLib.Value> {
+
         [CCode (has_construct_function = false)]
         protected ValueList ();
         public static GLib.Type get_type ();
 }
 ```
-

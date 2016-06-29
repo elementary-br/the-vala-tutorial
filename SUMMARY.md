@@ -4,7 +4,7 @@
 * [Introduction](#Introduction)
    * [What is Vala?](what_is_vala.md)
    * [Who is this tutorial for?](who_is_this_tutorial_for.md)
-   * [Conventions](#Conventions)
+   * [Conventions](conventions.md)
 * [A First Program](#A_First_Program)
    * [Compile and Run](#Compile_and_Run)
 * [Basics](#Basics)

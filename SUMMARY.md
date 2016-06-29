@@ -16,7 +16,7 @@
        * [Strings](strings.md)
        * [Arrays](arrays.md)
        * [Reference Types](reference_types.md)
-       * [Static Type Casting](#Static_Type_Casting)
+       * [Static Type Casting](static_type_casting.md)
        * [Type Inference](#Type_Inference)
        * [Defining new Type from other](#Defining_new_Type_from_other)
    * [Operators](#Operators)

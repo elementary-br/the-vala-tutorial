@@ -59,8 +59,7 @@
         14. [GObject-Style Construction](#GObject-Style_Construction)
 
     5.  [Advanced Features](#Advanced_Features)
-        1.  [Assertions and Contract
-            Programming](#Assertions_and_Contract_Programming)
+        1.  [Assertions and Contract Programming](#Assertions_and_Contract_Programming)
         2.  [Error Handling](#Error_Handling)
         3.  [Parameter Directions](#Parameter_Directions)
         4.  [Collections](#Collections)

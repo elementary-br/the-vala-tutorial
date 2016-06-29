@@ -1,3 +1,10 @@
 # What is Vala?
 
-Vala is a programming language that allows modern techniques to be used to write applications that run on the GNOME application stack, particularly GLib and GObject. This platform has long provided a very complete programming environment, with such features as a dynamic type system and assisted memory management. Before Vala, the only ways to program for the platform were with the machine native C API, which exposes a lot of often unwanted detail, with a high level language that has an attendant virtual machine, such as Python or the Mono C\# language, or alternatively, with C++ through a wrapper library.
+Vala is a programming language that allows modern techniques to be used to write applications that run on the GNOME platform stack, particularly GLib and GObject. This platform has long provided a very complete programming environment, with such features as a dynamic type system and assisted memory management. Before Vala, the only ways to program for the platform were with the machine native C API, which exposes a lot of often unwanted detail, with a high level language that has an attendant virtual machine, such as Python or the Mono C\# language, or alternatively, with C++ through a wrapper library.
+
+Vala is different from all these other techniques, as it outputs C code which can be compiled to run with no extra library support beyond the GNOME platform. This has several consequences, but most importantly:
+
+-   Programs written in Vala should have broadly similar performance to those written directly in C, whilst being easier and faster to write and maintain. 
+-   A Vala application can do nothing that a C equivalent cannot. Whilst Vala introduces a lot of language features that are not available in C, these are all mapped to C constructs, although they are often ones that are difficult or too time consuming to write directly.
+
+As such, whilst Vala is a modern language with all of the features you would expect, it gains its power from an existing platform, and must in some ways comply with the rules set down by it. 

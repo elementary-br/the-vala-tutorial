@@ -20,7 +20,7 @@
        * [Type Inference](type_inference.md)
        * [Defining new Type from other](defining_new_type_from_other.md)
    * [Operators](operators.md)
-   * [Control Structures](#Control_Structures)
+   * [Control Structures](control_structures.md)
    * [Language Elements](#Language_Elements)
        * [Methods](#Methods)
        * [Delegates](#Delegates)

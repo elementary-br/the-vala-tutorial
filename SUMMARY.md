@@ -22,7 +22,7 @@
    * [Operators](operators.md)
    * [Control Structures](control_structures.md)
    * [Language Elements](language_elements.md)
-       * [Methods](#Methods)
+       * [Methods](methods.md)
        * [Delegates](#Delegates)
        * [Anonymous Methods/Closures](#Anonymous_Methods_.2BAC8_Closures)
        * [Namespaces](#Namespaces)

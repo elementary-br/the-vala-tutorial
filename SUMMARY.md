@@ -11,7 +11,7 @@
    * [Source Files and Compilation](source_files_and_compilation.md)
    * [Syntax Overview](syntax_overview.md)
    * [Comments](comments.md)
-   * [Data Types](#Data_Types)
+   * [Data Types](data_types.md)
        * [Value Types](#Value_Types)
        * [Strings](#Strings)
        * [Arrays](#Arrays)

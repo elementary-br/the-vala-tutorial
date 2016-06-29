@@ -10,7 +10,7 @@
 * [Basics](basics.md)
    * [Source Files and Compilation](source_files_and_compilation.md)
    * [Syntax Overview](syntax_overview.md)
-   * [Comments](#Comments)
+   * [Comments](comments.md)
    * [Data Types](#Data_Types)
        * [Value Types](#Value_Types)
        * [Strings](#Strings)

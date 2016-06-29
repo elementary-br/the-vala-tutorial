@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Introduction](#Introduction)
    * [What is Vala?](what_is_vala.md)
-   * [Who is this tutorial for?](#Who_is_this_tutorial_for.3F)
+   * [Who is this tutorial for?](who_is_this_tutorial_for.md)
    * [Conventions](#Conventions)
 * [A First Program](#A_First_Program)
    * [Compile and Run](#Compile_and_Run)

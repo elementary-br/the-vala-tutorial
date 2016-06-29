@@ -27,7 +27,7 @@
         7.  [Language Elements](#Language_Elements)
             1.  [Methods](#Methods)
             2.  [Delegates](#Delegates)
-            3.  [Anonymous Methods / Closures](#Anonymous_Methods_.2BAC8_Closures)
+            3.  [Anonymous Methods/Closures](#Anonymous_Methods_.2BAC8_Closures)
             4.  [Namespaces](#Namespaces)
             5.  [Structs](#Structs)
             6.  [Classes](#Classes)

@@ -12,7 +12,7 @@
    * [Syntax Overview](syntax_overview.md)
    * [Comments](comments.md)
    * [Data Types](data_types.md)
-       * [Value Types](#Value_Types)
+       * [Value Types](value_types.md)
        * [Strings](#Strings)
        * [Arrays](#Arrays)
        * [Reference Types](#Reference_Types)

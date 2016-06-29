@@ -63,7 +63,7 @@
         2.  [Error Handling](#Error_Handling)
         3.  [Parameter Directions](#Parameter_Directions)
         4.  [Collections](#Collections)
-            1.  [ArrayList\<G\>](#ArrayList.3CG.3E)
+            1.  [ArrayList<G\>](#ArrayList.3CG.3E)
             2.  [HashMap\<K,V\>](#HashMap.3CK.2CV.3E)
             3.  [HashSet\<G\>](#HashSet.3CG.3E)
             4.  [Read-Only Views](#Read-Only_Views)

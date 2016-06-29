@@ -7,7 +7,7 @@
    * [Conventions](conventions.md)
 * [A First Program](a_first_program.md)
    * [Compile and Run](compile_and_run.md)
-* [Basics](#Basics)
+* [Basics](basics.md)
    * [Source Files and Compilation](#Source_Files_and_Compilation)
    * [Syntax Overview](#Syntax_Overview)
    * [Comments](#Comments)

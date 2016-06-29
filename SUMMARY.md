@@ -26,7 +26,7 @@
        * [Delegates](delegates.md)
        * [Anonymous Methods/Closures](anonymous_methods_and_closures.md)
        * [Namespaces](namespaces.md)
-       * [Structs](#Structs)
+       * [Structs](structs.md)
        * [Classes](#Classes)
        * [Interfaces](#Interfaces)
    * [Code Attributes](#Code_Attributes)

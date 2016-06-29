@@ -28,7 +28,7 @@
        * [Namespaces](namespaces.md)
        * [Structs](structs.md)
        * [Classes](classes.md)
-       * [Interfaces](#Interfaces)
+       * [Interfaces](interfaces.md)
    * [Code Attributes](#Code_Attributes)
 * [Object Oriented Programming](#Object_Oriented_Programming)
    * [Basics](#Basics-1)

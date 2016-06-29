@@ -47,11 +47,9 @@
 
         8.  [Interfaces](#Interfaces-1)
             1.  [Defining Prerequisites](#Defining_Prerequisites)
-            2.  [Defining default implementation in
-                methods](#Defining_default_implementation_in_methods)
+            2.  [Defining default implementation in methods](#Defining_default_implementation_in_methods)
             3.  [Properties](#Properties-1)
-            4.  [Mixins and Multiple
-                Inheritance](#Mixins_and_Multiple_Inheritance)
+            4.  [Mixins and Multiple Inheritance](#Mixins_and_Multiple_Inheritance)
 
         9.  [Polymorphism](#Polymorphism)
         10. [Method Hiding](#Method_Hiding)

@@ -27,7 +27,7 @@
        * [Anonymous Methods/Closures](anonymous_methods_and_closures.md)
        * [Namespaces](namespaces.md)
        * [Structs](structs.md)
-       * [Classes](#Classes)
+       * [Classes](classes.md)
        * [Interfaces](#Interfaces)
    * [Code Attributes](#Code_Attributes)
 * [Object Oriented Programming](#Object_Oriented_Programming)

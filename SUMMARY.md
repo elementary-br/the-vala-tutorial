@@ -18,7 +18,7 @@
        * [Reference Types](reference_types.md)
        * [Static Type Casting](static_type_casting.md)
        * [Type Inference](type_inference.md)
-       * [Defining new Type from other](#Defining_new_Type_from_other)
+       * [Defining new Type from other](defining_new_type_from_other.md)
    * [Operators](#Operators)
    * [Control Structures](#Control_Structures)
    * [Language Elements](#Language_Elements)

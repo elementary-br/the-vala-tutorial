@@ -8,7 +8,7 @@
 * [A First Program](a_first_program.md)
    * [Compile and Run](compile_and_run.md)
 * [Basics](basics.md)
-   * [Source Files and Compilation](#Source_Files_and_Compilation)
+   * [Source Files and Compilation](source_files_and_compilation.md)
    * [Syntax Overview](#Syntax_Overview)
    * [Comments](#Comments)
    * [Data Types](#Data_Types)

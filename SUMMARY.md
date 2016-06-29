@@ -14,7 +14,7 @@
    * [Data Types](data_types.md)
        * [Value Types](value_types.md)
        * [Strings](strings.md)
-       * [Arrays](#Arrays)
+       * [Arrays](arrays.md)
        * [Reference Types](#Reference_Types)
        * [Static Type Casting](#Static_Type_Casting)
        * [Type Inference](#Type_Inference)

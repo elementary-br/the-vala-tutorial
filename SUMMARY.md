@@ -9,7 +9,7 @@
    * [Compile and Run](compile_and_run.md)
 * [Basics](basics.md)
    * [Source Files and Compilation](source_files_and_compilation.md)
-   * [Syntax Overview](#Syntax_Overview)
+   * [Syntax Overview](syntax_overview.md)
    * [Comments](#Comments)
    * [Data Types](#Data_Types)
        * [Value Types](#Value_Types)

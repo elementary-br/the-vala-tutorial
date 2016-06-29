@@ -24,7 +24,7 @@
    * [Language Elements](language_elements.md)
        * [Methods](methods.md)
        * [Delegates](delegates.md)
-       * [Anonymous Methods/Closures](#Anonymous_Methods_.2BAC8_Closures)
+       * [Anonymous Methods/Closures](anonymous_methods_and_closures.md)
        * [Namespaces](#Namespaces)
        * [Structs](#Structs)
        * [Classes](#Classes)

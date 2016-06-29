@@ -20,8 +20,7 @@
             4.  [Reference Types](#Reference_Types)
             5.  [Static Type Casting](#Static_Type_Casting)
             6.  [Type Inference](#Type_Inference)
-            7.  [Defining new Type from
-                other](#Defining_new_Type_from_other)
+            7.  [Defining new Type from other](#Defining_new_Type_from_other)
 
         5.  [Operators](#Operators)
         6.  [Control Structures](#Control_Structures)

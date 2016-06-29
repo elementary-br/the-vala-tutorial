@@ -19,7 +19,7 @@
        * [Static Type Casting](static_type_casting.md)
        * [Type Inference](type_inference.md)
        * [Defining new Type from other](defining_new_type_from_other.md)
-   * [Operators](#Operators)
+   * [Operators](operators.md)
    * [Control Structures](#Control_Structures)
    * [Language Elements](#Language_Elements)
        * [Methods](#Methods)

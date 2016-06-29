@@ -1,6 +1,6 @@
 # Defining a new Type from another
 
-Defining a new type is a matter of deriving it from the one you need. Here is an example: 
+Defining a new type is a matter of deriving it from the one you need. 
 
 ```vala
 /* defining an alias for a basic type (equivalent to typedef int Integer in C)*/

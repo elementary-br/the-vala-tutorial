@@ -13,7 +13,7 @@
    * [Comments](comments.md)
    * [Data Types](data_types.md)
        * [Value Types](value_types.md)
-       * [Strings](#Strings)
+       * [Strings](strings.md)
        * [Arrays](#Arrays)
        * [Reference Types](#Reference_Types)
        * [Static Type Casting](#Static_Type_Casting)

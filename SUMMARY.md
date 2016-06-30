@@ -48,7 +48,7 @@
    * [Method Hiding](method_hiding.md)
    * [Run-Time Type Information](run-time_type_information.md)
    * [Dynamic Type Casting](dynamic_type_casting.md)
-   * [Generics](#Generics)
+   * [Generics](generics.md)
    * [GObject-Style Construction](#GObject-Style_Construction)
 * [Advanced Features](#Advanced_Features)
    * [Assertions and Contract Programming](#Assertions_and_Contract_Programming)

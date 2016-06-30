@@ -61,7 +61,7 @@
        * [Read-Only Views](#Read-Only_Views)
    * [Methods With Syntax Support](methods_with_syntax_support.md)
    * [Multi-Threading](multi-threading.md)
-       * [Threads in Vala](#Threads_in_Vala)
+       * [Threads in Vala](threads_in_vala.md)
        * [Resource Control](#Resource_Control)
    * [The Main Loop](#The_Main_Loop)
    * [Asynchronous Methods](#Asynchronous_Methods)

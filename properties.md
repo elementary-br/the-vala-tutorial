@@ -4,7 +4,6 @@ It is good object oriented programming practice to hide implementation details f
 
 If you're a Java programmer you will probably think of something like this: 
 
-
 ```vala
 class Person : Object {
     private int age = 32;

@@ -92,7 +92,7 @@
    * [valac](valac.md)
    * [vapigen](vapigen.md)
 * [Techniques](#Techniques)
-   * [Debugging](#Debugging)
+   * [Debugging](debugging.md)
    * [Using GLib](#Using_GLib)
        * [File Handling](#File_Handling)
 

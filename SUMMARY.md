@@ -70,7 +70,7 @@
    * [Ownership](ownership.md)
        * [Unowned References](unowned_references.md)
        * [Methods ownership](methods_ownership.md)
-       * [Properties ownership](#Properties_ownership)
+       * [Properties ownership](properties_ownership.md)
        * [Ownership Transfer](#Ownership_Transfer)
    * [Variable-Length Argument
    * [Pointers](#Pointers)

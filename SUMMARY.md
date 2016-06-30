@@ -42,7 +42,7 @@
    * [Interfaces](oop-interfaces.md)
        * [Defining Prerequisites](defining_prerequisites.md)
        * [Defining default implementation in methods](defining_default_implementation_in_methods.md)
-       * [Properties](#Properties-1)
+       * [Properties](properties-oop.md)
        * [Mixins and Multiple Inheritance](#Mixins_and_Multiple_Inheritance)
    * [Polymorphism](#Polymorphism)
    * [Method Hiding](#Method_Hiding)

@@ -79,7 +79,7 @@
    * [Profiles](#Profiles)
 * [Experimental Features](experimental-features.md)
    * [Chained Relational](chained_relational.md)
-   * [Regular Expression Literals](#Regular_Expression_Literals)
+   * [Regular Expression Literals](regular_expression_literals.md)
    * [Strict Non-Null Mode](#Strict_Non-Null_Mode)
 * [Libraries](#Libraries)
    * [Using Libraries](#Using_Libraries)

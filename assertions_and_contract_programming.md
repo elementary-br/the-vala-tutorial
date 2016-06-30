@@ -15,14 +15,7 @@ warn_if_fail(bool expr)
 warn_if_reached()
 ```
 
-You might be tempted to use assertions in order to check method arguments for `null`. However, this is not necessary, since Vala does that implicitly for all parameters that are not marked with
-`?` as being *nullable*. 
-
-
-
-
-
-
+You might be tempted to use assertions in order to check method arguments for `null`. However, this is not necessary, since Vala does that implicitly for all parameters that are not marked with `?` as being *nullable*.
 
 ```vala
 void method_name(Foo foo, Bar bar) {
@@ -32,18 +25,7 @@ void method_name(Foo foo, Bar bar) {
     */
 }
 ```
-
-
-
-
-Vala supports basic [contract programming](http://en.wikipedia.org/wiki/Contract_programming)
-features. A method may have preconditions (`requires`) and postconditions (`ensures`) that must be fulfilled at the beginning or the end of a method respectively: 
-
-
-
-
-
-
+Vala supports basic [contract programming](http://en.wikipedia.org/wiki/Contract_programming) features. A method may have preconditions (`requires`) and postconditions (`ensures`) that must be fulfilled at the beginning or the end of a method respectively: 
 
 ```vala
 double method_name(int x, double d)
@@ -54,8 +36,5 @@ double method_name(int x, double d)
     return d * x;
 }
 ```
-
-
-
 
 `result` is a special variable representing the return value.

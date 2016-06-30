@@ -37,7 +37,7 @@
    * [Signals](signals.md)
    * [Properties](properties.md)
    * [Inheritance](inheritance.md)
-   * [Abstract Classes](#Abstract_Classes)
+   * [Abstract Classes](abstract_classes.md)
        * [Virtual Methods](#Virtual_Methods)
    * [Interfaces](#Interfaces-1)
        * [Defining Prerequisites](#Defining_Prerequisites)

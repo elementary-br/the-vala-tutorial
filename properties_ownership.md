@@ -71,4 +71,4 @@ Anyways, the following code is a correct segment,
 public owned Object property { owned get { return new Object(); } }
 ```
 
-Unowned references play a similar role to pointers which are described later. They are however much simpler to use than pointers, as they can be easily converted to normal references. However, in general they should not be widely used in the programs unless you have a good reason. 
+Unowned references play a similar role to pointers which are described later. They are however much simpler to use than pointers, as they can be easily converted to normal references. However, in general they should not be widely used in the program unless you have a good reason. 

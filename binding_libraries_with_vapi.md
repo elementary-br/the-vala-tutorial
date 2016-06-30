@@ -4,7 +4,7 @@ VAPI files are descriptions of the public interface of external Vala libraries. 
 
 This process of creating this generally amounts to three steps, 
 
--   -   Running *vala-gen-introspect* to extract metadata from the C library. 
+-   Running *vala-gen-introspect* to extract metadata from the C library. 
 -   Adding extra metadata to standardise the interface or make various other changes. 
 -   Generating a VAPI file from the above sources using *vapigen*.
 

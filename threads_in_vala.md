@@ -28,7 +28,7 @@ int main(string[] args) {
 
 This short program will request a new thread be created and executed.The code to be run being that in *thread\_func*. Also note the test at the start of the main method - a Vala program will not be able to use threads unless compiled appropriately, so if you build this example in the usual way, it will just display an error and stop running. Being able to check for thread support at runtime allows a program to be built to run either with or without threads if that is wanted. In order to build with thread support, run: 
 
-    $ valac --thread threading-sample.vala
+`$ valac --thread threading-sample.vala`
 
 This will both include required libraries and make sure the threading system is initialised whenever possible. 
 

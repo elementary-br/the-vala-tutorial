@@ -69,7 +69,7 @@
    * [Weak References](weak_references.md)
    * [Ownership](ownership.md)
        * [Unowned References](unowned_references.md)
-       * [Methods ownership](#Methods_ownership)
+       * [Methods ownership](methods_ownership.md)
        * [Properties ownership](#Properties_ownership)
        * [Ownership Transfer](#Ownership_Transfer)
    * [Variable-Length Argument

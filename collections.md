@@ -22,7 +22,7 @@ All classes and interfaces use the generics system. This means that they must be
 
 Some important Gee classes are: 
 
-#### ArrayList<G/>
+#### ArrayList</G>
 
 
 Implementing: Iterable<G/>, Collection<G>, List<G> 

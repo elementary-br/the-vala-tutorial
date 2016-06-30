@@ -54,7 +54,7 @@
    * [Assertions and Contract Programming](assertions_and_contract_programming.md)
    * [Error Handling](error_handling.md)
    * [Parameter Directions](parameter-directions.md)
-   * [Collections](#Collections)
+   * [Collections](collections.md)
        * [ArrayList&lt;G\>](#ArrayList.3CG.3E)
        * [HashMap&lt;K,V\>](#HashMap.3CK.2CV.3E)
        * [HashSet&lt;G\>](#HashSet.3CG.3E)

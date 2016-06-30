@@ -22,15 +22,14 @@ All classes and interfaces use the generics system. This means that they must be
 
 Some important Gee classes are: 
 
-#### ArrayList</G>
+#### ArrayList<G>
 
 
-Implementing: Iterable<G/>, Collection<G>, List<G> 
+Implementing: Iterable<G>, Collection<G>, List<G> 
 
 An ordered list of items of type `G` backed by a dynamically resizing array. This type is very fast for accessing data, but potentially slow at inserting items anywhere other than at the end, or at inserting items when the internal array is full. 
 
 #### HashMap<K,V>
-
 
 Implementing: Iterable<Entry<K,V>>, Map<K,V> 
 
@@ -45,7 +44,6 @@ var map = new Gee.HashMap<Foo, Object>(foo_hash, foo_equal);
 For strings and integers the hash and equal functions are detected automatically, objects are distinguished by their references by default. You have to provide custom hash and equal functions only if you want to override the default behaviour. 
 
 #### HashSet<G>
-
 
 Implementing: Iterable<G>, Collection<G>, Set<G> 
 

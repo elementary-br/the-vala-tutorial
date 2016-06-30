@@ -39,7 +39,7 @@
    * [Inheritance](inheritance.md)
    * [Abstract Classes](abstract_classes.md)
        * [Virtual Methods](virtual_methods.md)
-   * [Interfaces](#Interfaces-1)
+   * [Interfaces](oop-interfaces.md)
        * [Defining Prerequisites](#Defining_Prerequisites)
        * [Defining default implementation in methods](#Defining_default_implementation_in_methods)
        * [Properties](#Properties-1)

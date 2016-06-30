@@ -39,7 +39,10 @@ However, you cannot assign a new byte value to this position, since Vala strings
 Many of the basic types have reasonable methods for parsing from and converting to strings, for example: 
 
 ```vala
-bool b = bool.parse("false");           // => false int i = int.parse("-52");               // => -52 double d = double.parse("6.67428E-11"); // => 6.67428E-11 string s1 = true.to_string();           // => "true"
+bool b = bool.parse("false");           // => false
+int i = int.parse("-52");               // => -52
+double d = double.parse("6.67428E-11"); // => 6.67428E-11
+string s1 = true.to_string();           // => "true"
 string s2 = 21.to_string();             // => "21"
 ```
 

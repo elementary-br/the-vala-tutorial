@@ -46,7 +46,7 @@
        * [Mixins and Multiple Inheritance](mixins_and_multiple_inheritance.md)
    * [Polymorphism](polymorphism.md)
    * [Method Hiding](method_hiding.md)
-   * [Run-Time Type Information](#Run-Time_Type_Information)
+   * [Run-Time Type Information](run-time_type_information.md)
    * [Dynamic Type Casting](#Dynamic_Type_Casting)
    * [Generics](#Generics)
    * [GObject-Style Construction](#GObject-Style_Construction)

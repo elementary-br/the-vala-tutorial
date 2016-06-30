@@ -55,12 +55,6 @@ The *Iterator* type can have any name and must implement one of these two protoc
 
 This example implements some of these methods: 
 
-
-
-
-
-
-
 ```vala
 public class EvenNumbers {
     public int get(int index) {

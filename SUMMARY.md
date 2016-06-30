@@ -67,7 +67,7 @@
    * [Asynchronous Methods](asynchronous_methods.md)
        * [Examples](async_examples.md)
    * [Weak References](weak_references.md)
-   * [Ownership](#Ownership)
+   * [Ownership](ownership.md)
        * [Unowned References](#Unowned_References)
        * [Methods ownership](#Methods_ownership)
        * [Properties ownership](#Properties_ownership)

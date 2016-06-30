@@ -62,7 +62,7 @@
    * [Methods With Syntax Support](methods_with_syntax_support.md)
    * [Multi-Threading](multi-threading.md)
        * [Threads in Vala](threads_in_vala.md)
-       * [Resource Control](#Resource_Control)
+       * [Resource Control](resource_control.md)
    * [The Main Loop](#The_Main_Loop)
    * [Asynchronous Methods](#Asynchronous_Methods)
        * [Examples](#Examples)

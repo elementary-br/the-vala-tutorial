@@ -59,7 +59,7 @@
        * [HashMap&lt;K,V\>](#HashMap.3CK.2CV.3E)
        * [HashSet&lt;G\>](#HashSet.3CG.3E)
        * [Read-Only Views](#Read-Only_Views)
-   * [Methods With Syntax Support](#Methods_With_Syntax_Support)
+   * [Methods With Syntax Support](methods_with_syntax_support.md)
    * [Multi-Threading](#Multi-Threading)
        * [Threads in Vala](#Threads_in_Vala)
        * [Resource Control](#Resource_Control)

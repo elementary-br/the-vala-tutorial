@@ -61,3 +61,37 @@ public class Phone : Caller {
 ```
 
 In this case, we have defined a `Callable` interface with a default implementation for `abstract bool hang ()` called `default_hang`, it could be a `static` or `virtual` method. Then `Caller` is a base class implementing `Callable` for the `TechPhone` and `Phone` classes, while `Caller`'s `hang ()` method simple call `Callable` default implementation. `TechPhone` doesn't do anything and just takes `Caller` as base class, using the default method implementations; but `Phone` overrides `Caller.hang ()` and this makes to use its own implementation, allowing to always call it even if it is cast to `Callable` object.
+
+##### Explicit method implementation
+
+The explicit interface method implementation allows to implement two interfaces that have methods (not properties) with the same name.
+
+Example: 
+
+
+```vala
+interface Foo {
+ public abstract int m();
+}
+
+interface Bar {
+ public abstract string m();
+}
+
+class Cls: Foo, Bar {
+ public int Foo.m() {
+  return 10;
+ }
+
+ public string Bar.m() {
+  return "bar";
+ }
+}
+
+void main () {
+ var cls = new Cls ();
+ message ("%d %s", ((Foo) cls).m(), ((Bar) cls).m());
+}
+```
+
+Will output 10 bar. 

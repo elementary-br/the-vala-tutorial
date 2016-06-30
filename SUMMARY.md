@@ -41,7 +41,7 @@
        * [Virtual Methods](virtual_methods.md)
    * [Interfaces](oop-interfaces.md)
        * [Defining Prerequisites](defining_prerequisites.md)
-       * [Defining default implementation in methods](#Defining_default_implementation_in_methods)
+       * [Defining default implementation in methods](defining_default_implementation_in_methods.md)
        * [Properties](#Properties-1)
        * [Mixins and Multiple Inheritance](#Mixins_and_Multiple_Inheritance)
    * [Polymorphism](#Polymorphism)

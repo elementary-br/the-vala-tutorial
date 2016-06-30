@@ -67,6 +67,6 @@ In addition the *in* operation can be used to determine whether one string conta
 if ("ere" in "Able was I ere I saw Elba.") ...
 ```
 
-For more information, please report to [the complete overview of the string class](http://www.valadoc.org/glib-2.0/string.html). 
+For more information, please see [the complete overview of the string class](http://www.valadoc.org/glib-2.0/string.html). 
 
 A [sample program](/Projects/Vala/StringSample) demonstrating string usage is also available. 

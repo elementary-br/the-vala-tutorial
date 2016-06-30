@@ -83,7 +83,7 @@
    * [Strict Non-Null Mode](strict_non_null_mode.md)
 * [Libraries](libraries.md)
    * [Using Libraries](#Using_Libraries)
-   * [Creating a Library](#Creating_a_Library)
+   * [Creating a Library](creating_a_library.md)
        * [Using Autotools](#Using_Autotools)
        * Compilation and linking using Command
    * Binding Libraries with VAPI

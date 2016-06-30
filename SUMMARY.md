@@ -49,7 +49,7 @@
    * [Run-Time Type Information](run-time_type_information.md)
    * [Dynamic Type Casting](dynamic_type_casting.md)
    * [Generics](generics.md)
-   * [GObject-Style Construction](#GObject-Style_Construction)
+   * [GObject-Style Construction](gobject-style-construction.md)
 * [Advanced Features](#Advanced_Features)
    * [Assertions and Contract Programming](#Assertions_and_Contract_Programming)
    * [Error Handling](#Error_Handling)

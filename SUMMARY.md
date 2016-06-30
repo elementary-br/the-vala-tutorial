@@ -52,7 +52,7 @@
    * [GObject-Style Construction](gobject-style-construction.md)
 * [Advanced Features](advanced_features.md)
    * [Assertions and Contract Programming](assertions_and_contract_programming.md)
-   * [Error Handling](#Error_Handling)
+   * [Error Handling](error_handling.md)
    * [Parameter Directions](#Parameter_Directions)
    * [Collections](#Collections)
        * [ArrayList&lt;G\>](#ArrayList.3CG.3E)

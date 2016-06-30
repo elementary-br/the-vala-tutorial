@@ -14,5 +14,4 @@ The GLib types can be used similarly:
 |---|---|
 |GLib.Foo foo = new GLib.Foo();|foo.bar();|
 
-
 The APIs are not identical between C and Vala, but these naming rules should mean you can find the functions you need in the GLib VAPI files shipped with Vala, and from there find the parameters. This will hopefully suffice until more Vala documentation can be generated. 

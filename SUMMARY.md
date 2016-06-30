@@ -71,7 +71,7 @@
        * [Unowned References](unowned_references.md)
        * [Methods ownership](methods_ownership.md)
        * [Properties ownership](properties_ownership.md)
-       * [Ownership Transfer](#Ownership_Transfer)
+       * [Ownership Transfer](ownership_transfer.md)
    * [Variable-Length Argument
    * [Pointers](#Pointers)
    * [Non-Object classes](#Non-Object_classes)

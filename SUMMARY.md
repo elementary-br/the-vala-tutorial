@@ -33,7 +33,7 @@
 * [Object Oriented Programming](object_oriented_programming.md)
    * [Basics](oop-basics.md)
    * [Construction](construction.md)
-   * [Destruction](#Destruction)
+   * [Destruction](destruction.md)
    * [Signals](#Signals)
    * [Properties](#Properties)
    * [Inheritance](#Inheritance)

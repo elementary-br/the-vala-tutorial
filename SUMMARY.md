@@ -91,7 +91,6 @@
 * [Tools](tools.md)
    * [valac](valac.md)
    * [vapigen](vapigen.md)
-   * [vala-gen-introspect](vala-gen-introspect.md)
 * [Techniques](#Techniques)
    * [Debugging](#Debugging)
    * [Using GLib](#Using_GLib)

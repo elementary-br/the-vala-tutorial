@@ -35,7 +35,7 @@
    * [Construction](construction.md)
    * [Destruction](destruction.md)
    * [Signals](signals.md)
-   * [Properties](#Properties)
+   * [Properties](properties.md)
    * [Inheritance](#Inheritance)
    * [Abstract Classes](#Abstract_Classes)
        * [Virtual Methods](#Virtual_Methods)

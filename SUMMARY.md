@@ -89,7 +89,7 @@
        * [Examples](library-examples.md)
    * [Binding Libraries with VAPI](binding_libraries_with_vapi.md)
 * [Tools](tools.md)
-   * [valac](#valac)
+   * [valac](valac.md)
    * [vapigen](#vapigen)
    * [vala-gen-introspect](#vala-gen-introspect)
 * [Techniques](#Techniques)

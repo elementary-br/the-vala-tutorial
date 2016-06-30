@@ -72,7 +72,7 @@
        * [Methods ownership](methods_ownership.md)
        * [Properties ownership](properties_ownership.md)
        * [Ownership Transfer](ownership_transfer.md)
-   * [[[Variable-Length Argument](variable_length_argument.md)](variable_length_argument.md)
+   * [Variable-Length Argument](variable_length_argument.md)
    * [Pointers](#Pointers)
    * [Non-Object classes](#Non-Object_classes)
    * [D-Bus Integration](#D-Bus_Integration)

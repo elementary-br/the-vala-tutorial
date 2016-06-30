@@ -93,6 +93,6 @@
    * [vapigen](vapigen.md)
 * [Techniques](#Techniques)
    * [Debugging](debugging.md)
-   * [Using GLib](#Using_GLib)
+   * [Using GLib](using_glib.md)
        * [File Handling](#File_Handling)
 

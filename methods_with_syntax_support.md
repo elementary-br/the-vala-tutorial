@@ -50,8 +50,8 @@ The *Iterator* type can have any name and must implement one of these two protoc
 
 | | |
 |---|---|
-| `bool next()` / `T get()` | standard iterator protocol: iterating until *.next()* returns `false`. The current element is retrieved via *.get()*. |
-| `T? next_value()` | alternative iterator protocol: If the iterator object has a *.next_value()* function that returns a nullable type then we iterate by calling this function until it returns `null`.|
+|`bool next()` / `T get()` | standard iterator protocol: iterating until *.next()* returns `false`. The current element is retrieved via *.get()*. |
+|`T? next_value()` | alternative iterator protocol: If the iterator object has a *.next_value()* function that returns a nullable type then we iterate by calling this function until it returns `null`.|
 
 This example implements some of these methods: 
 

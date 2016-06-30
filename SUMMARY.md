@@ -45,7 +45,7 @@
        * [Properties](properties-oop.md)
        * [Mixins and Multiple Inheritance](mixins_and_multiple_inheritance.md)
    * [Polymorphism](polymorphism.md)
-   * [Method Hiding](#Method_Hiding)
+   * [Method Hiding](method_hiding.md)
    * [Run-Time Type Information](#Run-Time_Type_Information)
    * [Dynamic Type Casting](#Dynamic_Type_Casting)
    * [Generics](#Generics)

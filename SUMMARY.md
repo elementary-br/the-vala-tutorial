@@ -60,7 +60,7 @@
        * [HashSet&lt;G\>](#HashSet.3CG.3E)
        * [Read-Only Views](#Read-Only_Views)
    * [Methods With Syntax Support](methods_with_syntax_support.md)
-   * [Multi-Threading](#Multi-Threading)
+   * [Multi-Threading](multi-threading.md)
        * [Threads in Vala](#Threads_in_Vala)
        * [Resource Control](#Resource_Control)
    * [The Main Loop](#The_Main_Loop)

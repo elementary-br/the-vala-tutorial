@@ -2,7 +2,7 @@
 
 For flexible file I/O and file handling see [GIO Samples](/Projects/Vala/GIOSamples). 
 
-You can also use FileUtils.get\_contents to load a file into a string.
+You can also use FileUtils.get_contents to load a file into a string.
 
 ```vala
 string content;

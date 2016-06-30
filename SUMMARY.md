@@ -44,7 +44,7 @@
        * [Defining default implementation in methods](defining_default_implementation_in_methods.md)
        * [Properties](properties-oop.md)
        * [Mixins and Multiple Inheritance](mixins_and_multiple_inheritance.md)
-   * [Polymorphism](#Polymorphism)
+   * [Polymorphism](polymorphism.md)
    * [Method Hiding](#Method_Hiding)
    * [Run-Time Type Information](#Run-Time_Type_Information)
    * [Dynamic Type Casting](#Dynamic_Type_Casting)

@@ -6,8 +6,6 @@ When defining a class that inherits from another, you create a relationship betw
 
 When writing the definition of a class it is possible to exercise precise control over who can access what methods and data in the object. The following example demonstrates a range of these options: 
 
-
-
 ```vala
 class SuperClass : GLib.Object {
 

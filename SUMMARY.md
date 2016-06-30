@@ -78,7 +78,7 @@
    * [D-Bus Integration](d-bus-integration.md)
    * [Profiles](#Profiles)
 * [Experimental Features](experimental-features.md)
-   * Chained Relational
+   * [Chained Relational](chained_relational.md)
    * [Regular Expression Literals](#Regular_Expression_Literals)
    * [Strict Non-Null Mode](#Strict_Non-Null_Mode)
 * [Libraries](#Libraries)

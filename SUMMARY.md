@@ -50,7 +50,7 @@
    * [Dynamic Type Casting](dynamic_type_casting.md)
    * [Generics](generics.md)
    * [GObject-Style Construction](gobject-style-construction.md)
-* [Advanced Features](#Advanced_Features)
+* [Advanced Features](advanced_features.md)
    * [Assertions and Contract Programming](#Assertions_and_Contract_Programming)
    * [Error Handling](#Error_Handling)
    * [Parameter Directions](#Parameter_Directions)

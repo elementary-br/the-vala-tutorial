@@ -64,7 +64,7 @@
        * [Threads in Vala](threads_in_vala.md)
        * [Resource Control](resource_control.md)
    * [The Main Loop](the_main_loop.md)
-   * [Asynchronous Methods](#Asynchronous_Methods)
+   * [Asynchronous Methods](asynchronous_methods.md)
        * [Examples](#Examples)
    * [Weak References](#Weak_References)
    * [Ownership](#Ownership)

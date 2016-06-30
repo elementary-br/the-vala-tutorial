@@ -66,7 +66,7 @@
    * [The Main Loop](the_main_loop.md)
    * [Asynchronous Methods](asynchronous_methods.md)
        * [Examples](async_examples.md)
-   * [Weak References](#Weak_References)
+   * [Weak References](weak_references.md)
    * [Ownership](#Ownership)
        * [Unowned References](#Unowned_References)
        * [Methods ownership](#Methods_ownership)

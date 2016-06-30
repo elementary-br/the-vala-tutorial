@@ -32,7 +32,7 @@
    * [Code Attributes](code_attributes.md)
 * [Object Oriented Programming](object_oriented_programming.md)
    * [Basics](oop-basics.md)
-   * [Construction](#Construction)
+   * [Construction](construction.md)
    * [Destruction](#Destruction)
    * [Signals](#Signals)
    * [Properties](#Properties)

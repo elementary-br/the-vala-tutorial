@@ -88,7 +88,7 @@
        * [Compilation and linking using Command](compilation_and_linking_using_command.md)
        * [Examples](library-examples.md)
    * [Binding Libraries with VAPI](binding_libraries_with_vapi.md)
-* [Tools](#Tools)
+* [Tools](tools.md)
    * [valac](#valac)
    * [vapigen](#vapigen)
    * [vala-gen-introspect](#vala-gen-introspect)

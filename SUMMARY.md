@@ -74,7 +74,7 @@
        * [Ownership Transfer](ownership_transfer.md)
    * [Variable-Length Argument](variable_length_argument.md)
    * [Pointers](pointers.md)
-   * [Non-Object classes](#Non-Object_classes)
+   * [Non-Object classes](non-object-classes.md)
    * [D-Bus Integration](#D-Bus_Integration)
    * [Profiles](#Profiles)
 * [Experimental Features](#Experimental_Features)

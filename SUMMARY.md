@@ -84,7 +84,7 @@
 * [Libraries](libraries.md)
    * [Using Libraries](#Using_Libraries)
    * [Creating a Library](creating_a_library.md)
-       * [Using Autotools](#Using_Autotools)
+       * [Using Autotools](using_autotools.md)
        * Compilation and linking using Command
    * Binding Libraries with VAPI
 * [Tools](#Tools)

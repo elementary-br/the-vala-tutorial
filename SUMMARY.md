@@ -36,7 +36,7 @@
    * [Destruction](destruction.md)
    * [Signals](signals.md)
    * [Properties](properties.md)
-   * [Inheritance](#Inheritance)
+   * [Inheritance](inheritance.md)
    * [Abstract Classes](#Abstract_Classes)
        * [Virtual Methods](#Virtual_Methods)
    * [Interfaces](#Interfaces-1)

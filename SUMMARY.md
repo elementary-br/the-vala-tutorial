@@ -63,7 +63,7 @@
    * [Multi-Threading](multi-threading.md)
        * [Threads in Vala](threads_in_vala.md)
        * [Resource Control](resource_control.md)
-   * [The Main Loop](#The_Main_Loop)
+   * [The Main Loop](the_main_loop.md)
    * [Asynchronous Methods](#Asynchronous_Methods)
        * [Examples](#Examples)
    * [Weak References](#Weak_References)

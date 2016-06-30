@@ -5,6 +5,6 @@
 
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/valadate-project/vala-manual)
 
-The Vala Tutorial is covered by the [LGPL 2.1](COPYING.md).
+The Vala Tutorial is licensed under the [LGPL 2.1](COPYING.md).
 
 Cover Image: By NASA/JPL-Caltech/T. Pyle (SSC), Public Domain, http://www.spitzer.caltech.edu/images/2405-sig05-027-Belt-of-Dust

@@ -80,7 +80,7 @@
 * [Experimental Features](experimental-features.md)
    * [Chained Relational](chained_relational.md)
    * [Regular Expression Literals](regular_expression_literals.md)
-   * [Strict Non-Null Mode](#Strict_Non-Null_Mode)
+   * [Strict Non-Null Mode](strict_non_null_mode.md)
 * [Libraries](#Libraries)
    * [Using Libraries](#Using_Libraries)
    * [Creating a Library](#Creating_a_Library)

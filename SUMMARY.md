@@ -43,7 +43,7 @@
        * [Defining Prerequisites](defining_prerequisites.md)
        * [Defining default implementation in methods](defining_default_implementation_in_methods.md)
        * [Properties](properties-oop.md)
-       * [Mixins and Multiple Inheritance](#Mixins_and_Multiple_Inheritance)
+       * [Mixins and Multiple Inheritance](mixins_and_multiple_inheritance.md)
    * [Polymorphism](#Polymorphism)
    * [Method Hiding](#Method_Hiding)
    * [Run-Time Type Information](#Run-Time_Type_Information)

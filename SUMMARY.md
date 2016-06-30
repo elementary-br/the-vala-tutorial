@@ -90,7 +90,7 @@
    * [Binding Libraries with VAPI](binding_libraries_with_vapi.md)
 * [Tools](tools.md)
    * [valac](valac.md)
-   * [vapigen](#vapigen)
+   * [vapigen](vapigen.md)
    * [vala-gen-introspect](#vala-gen-introspect)
 * [Techniques](#Techniques)
    * [Debugging](#Debugging)

@@ -47,7 +47,7 @@
    * [Polymorphism](polymorphism.md)
    * [Method Hiding](method_hiding.md)
    * [Run-Time Type Information](run-time_type_information.md)
-   * [Dynamic Type Casting](#Dynamic_Type_Casting)
+   * [Dynamic Type Casting](dynamic_type_casting.md)
    * [Generics](#Generics)
    * [GObject-Style Construction](#GObject-Style_Construction)
 * [Advanced Features](#Advanced_Features)

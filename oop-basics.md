@@ -28,18 +28,11 @@ This class is described as `public` (by default, classes are `internal`). The im
 
 The members are also all described as either `public` or `private`. The member *first\_data* is `public`, so it is visible directly to any user of the class, and can be modified without the containing instance being aware of it. The second data member is `private`, and so can only be referenced by code belonging to this class. Vala supports four different access modifiers:
 
-|---|---|
-| `public` | No restrictions to access class/struct definition. This is the default if no access modifier is specified |
-
-  `private`                 
-
-                 class definition and any class that
-  `protected`               inherits from the class
-
-                 classes defined within the same
-  `internal`                package
-  ------------------------------------ ------------------------------------
-
+| | |
+| `public` | No restrictions to access |
+| `private` | Access is limited to within the class/struct definition. This is the default if no access modifier is specified. |
+| `protected` | Access is limited to within the class definition and any class that inherits from the class |
+| `internal`  | Access is limited eclusively to classes defined within the same package |
 
 
 The constructor initialises new instances of a class. It has the same name as the class, may take zero or more arguments and is defined without return type. 

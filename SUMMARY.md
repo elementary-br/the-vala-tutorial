@@ -75,7 +75,7 @@
    * [Variable-Length Argument](variable_length_argument.md)
    * [Pointers](pointers.md)
    * [Non-Object classes](non-object-classes.md)
-   * [D-Bus Integration](#D-Bus_Integration)
+   * [D-Bus Integration](d-bus-integration.md)
    * [Profiles](#Profiles)
 * [Experimental Features](#Experimental_Features)
    * Chained Relational

@@ -1,26 +1,19 @@
 # Assertions and Contract Programming
 
 With *assertions* a programmer can check assumptions at runtime. The syntax is `assert(`*condition*`)`. If an assertion fails the program will terminate with an appropriate error message.
+
 There are a few more assertion methods within the GLib standard namespace, e.g.: 
+```vala
+assert_not_reached()
 
+return_if_fail(bool expr)
 
-  ------------------------------------------------------------------------
-  assert\_not\_reached()
+return_if_reached()
 
-  
-  return\_if\_fail(bool expr)
+warn_if_fail(bool expr)
 
-  
-  return\_if\_reached()
-
-  
-  warn\_if\_fail(bool expr)
-
-  
-  warn\_if\_reached()
-  ------------------------------------------------------------------------
-
-
+warn_if_reached()
+```
 
 You might be tempted to use assertions in order to check method arguments for `null`. However, this is not necessary, since Vala does that implicitly for all parameters that are not marked with
 `?` as being *nullable*. 

@@ -34,7 +34,7 @@
    * [Basics](oop-basics.md)
    * [Construction](construction.md)
    * [Destruction](destruction.md)
-   * [Signals](#Signals)
+   * [Signals](signals.md)
    * [Properties](#Properties)
    * [Inheritance](#Inheritance)
    * [Abstract Classes](#Abstract_Classes)

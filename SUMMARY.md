@@ -78,15 +78,15 @@
    * [D-Bus Integration](#D-Bus_Integration)
    * [Profiles](#Profiles)
 * [Experimental Features](#Experimental_Features)
-   * [Chained Relational
+   * Chained Relational
    * [Regular Expression Literals](#Regular_Expression_Literals)
    * [Strict Non-Null Mode](#Strict_Non-Null_Mode)
 * [Libraries](#Libraries)
    * [Using Libraries](#Using_Libraries)
    * [Creating a Library](#Creating_a_Library)
        * [Using Autotools](#Using_Autotools)
-       * [Compilation and linking using Command
-   * [Binding Libraries with VAPI
+       * Compilation and linking using Command
+   * Binding Libraries with VAPI
 * [Tools](#Tools)
    * [valac](#valac)
    * [vapigen](#vapigen)

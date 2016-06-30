@@ -51,7 +51,7 @@
    * [Generics](generics.md)
    * [GObject-Style Construction](gobject-style-construction.md)
 * [Advanced Features](advanced_features.md)
-   * [Assertions and Contract Programming](#Assertions_and_Contract_Programming)
+   * [Assertions and Contract Programming](assertions_and_contract_programming.md)
    * [Error Handling](#Error_Handling)
    * [Parameter Directions](#Parameter_Directions)
    * [Collections](#Collections)

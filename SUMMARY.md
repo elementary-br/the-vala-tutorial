@@ -87,7 +87,7 @@
        * [Using Autotools](using_autotools.md)
        * [Compilation and linking using Command](compilation_and_linking_using_command.md)
        * [Examples](library-examples.md)
-   * Binding Libraries with VAPI
+   * [Binding Libraries with VAPI](binding_libraries_with_vapi.md)
 * [Tools](#Tools)
    * [valac](#valac)
    * [vapigen](#vapigen)

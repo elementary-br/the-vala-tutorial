@@ -1,7 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
-* [Introduction](#Introduction)
+* [Introduction](README.md/#Introduction)
    * [What is Vala?](what_is_vala.md)
    * [Who is this tutorial for?](who_is_this_tutorial_for.md)
    * [Conventions](conventions.md)
@@ -55,10 +54,10 @@
    * [Error Handling](error_handling.md)
    * [Parameter Directions](parameter-directions.md)
    * [Collections](collections.md)
-       * [ArrayList<G>](#ArrayList<G)
-       * [HashMap<K,V>](#HashMap)
-       * [HashSet<G>](#HashSet)
-       * [Read-Only Views](#Read-Only_Views)
+       * [ArrayList<G>](collections.md/#ArrayList<G)
+       * [HashMap<K,V>](collections.md/#HashMap)
+       * [HashSet<G>](collections.md/#HashSet)
+       * [Read-Only Views](collections.md/#Read-Only_Views)
    * [Methods With Syntax Support](methods_with_syntax_support.md)
    * [Multi-Threading](multi-threading.md)
        * [Threads in Vala](threads_in_vala.md)
@@ -76,7 +75,7 @@
    * [Pointers](pointers.md)
    * [Non-Object classes](non-object-classes.md)
    * [D-Bus Integration](d-bus-integration.md)
-   * [Profiles](#Profiles)
+   * [Profiles](advanced_features.md/#Profiles)
 * [Experimental Features](experimental-features.md)
    * [Chained Relational](chained_relational.md)
    * [Regular Expression Literals](regular_expression_literals.md)
@@ -92,8 +91,9 @@
    * [valac](valac.md)
    * [vapigen](vapigen.md)
    * [vala-gen-introspect](vala-gen-introspect.md)
-* [Techniques](#Techniques)
+
+<!-- Where it belongs to ? -->
+<!-- * [Techniques](#Techniques)
    * [Debugging](#Debugging)
    * [Using GLib](#Using_GLib)
-       * [File Handling](#File_Handling)
-
+       * [File Handling](#File_Handling) -->

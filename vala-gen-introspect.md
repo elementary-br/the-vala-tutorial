@@ -1,2 +1,0 @@
-# vala-gen-introspect
-

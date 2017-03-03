@@ -1,3 +1,3 @@
 # The Vala Tutorial
 
-![](cover.jpg)
+![](../cover.jpg)

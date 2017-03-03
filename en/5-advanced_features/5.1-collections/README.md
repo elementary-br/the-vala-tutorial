@@ -22,14 +22,14 @@ All classes and interfaces use the generics system. This means that they must be
 
 Some important Gee classes are:
 
-#### ArrayList<G>
+### ArrayList
 
 
 Implementing: Iterable<G>, Collection<G>, List<G>
 
 An ordered list of items of type `G` backed by a dynamically resizing array. This type is very fast for accessing data, but potentially slow at inserting items anywhere other than at the end, or at inserting items when the internal array is full.
 
-#### HashMap<K,V>
+### HashMap
 
 Implementing: Iterable<Entry<K,V>>, Map<K,V>
 
@@ -43,12 +43,12 @@ var map = new Gee.HashMap<Foo, Object>(foo_hash, foo_equal);
 
 For strings and integers the hash and equal functions are detected automatically, objects are distinguished by their references by default. You have to provide custom hash and equal functions only if you want to override the default behaviour.
 
-#### HashSet<G>
+### HashSet
 
 Implementing: Iterable<G>, Collection<G>, Set<G>
 
 A set of elements of type `G`. Duplicates are detected by computing a hash value for each key - this can be customised by providing pointers to functions for hashing and testing equality of keys in specific ways.
 
-#### Read-Only Views
+### Read-Only Views
 
 You can get a read-only view of a collection via the *read_only_view* property, e.g. `my_map.read_only_view`. This will return a wrapper that has the same interface as its contained collection, but will not allow any form of modification, or any access to the contained collection.

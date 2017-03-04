@@ -1,4 +1,5 @@
 #!/bin/sh
+gitignore=$(cat .gitignore)
 
 # Check for uncommon filenames [x]
 # broken links [ ]
@@ -27,5 +28,34 @@ check_filename () {
 				test_fail "$file contains $word"
 			fi
 		done
+	done
+}
+
+check_file () {
+	if ( test -e $1 ); then
+		test_ok "${1} found"
+	else
+		test_fail "Failed to find ${1}"
+	fi
+}
+
+# TODO: Find a way to reuse this code
+directory_iterator () {
+	for file in ${1-.}/*; do
+		if ( test -d "${file}" ); then
+			directory_iterator "$file"
+		fi
+		echo $file
+	done
+}
+
+# Check if file is gitignored
+# FIXME: Not working
+is_gitignored () {
+	for file in $gitignore; do
+		if ( string_contains ${file} ${1} ); then
+			echo "${1} is gitignored"
+			return 1
+		fi
 	done
 }

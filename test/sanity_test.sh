@@ -17,11 +17,3 @@ sanity_test () {
 	# Needs a parser for the links.
 	# Needs a directory iterator
 }
-
-check_file () {
-	if ( test -e $1 ); then
-		test_ok "${1} found"
-	else
-		test_fail "Failed to find ${1}"
-	fi
-}

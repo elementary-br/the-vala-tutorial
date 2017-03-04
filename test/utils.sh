@@ -30,15 +30,6 @@ string_contains () {
 	fi
 }
 
-# TODO: Find a way to reuse this code
-directory_iterator () {
-	for file in ${1-.}/*; do
-		if ( test -d "${file}" ); then
-			directory_iterator "$file"
-		fi
-	done
-}
-
 
 # Color table
 red='\033[0;31m'

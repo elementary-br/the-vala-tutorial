@@ -18,6 +18,9 @@ test_title () {
 
 test_result () {
 	echo "\n${green}${ok}${normal} succeded, ${red}${fails}${normal} failed, ${blue}${count}${normal} total"
+	percent=$(echo "$ok / $count * 100.0" | bc -l)
+	# If someone want make percentage shorter I would be pleased.
+	echo  "${percent}% has passed the test"
 }
 
 string_contains () {

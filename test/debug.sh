@@ -7,7 +7,7 @@ debug () {
 }
 
 info () {
-	is_debug_enable && echo "${blue}info: ${normal}${1}"
+	echo "${blue}info: ${normal}${1}"
 	return 0
 }
 

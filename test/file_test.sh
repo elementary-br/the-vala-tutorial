@@ -58,12 +58,12 @@ cmp_file () {
 # TODO: Find a way to reuse this code
 directory_iterator () {
 	for file in ${1-.}/*; do
-		if ( ! is_test ${file} ) && ( ! is_gitignored ${file} ); then
+		# if ( ! is_test ${file} ) && ( ! is_gitignored ${file} ); then
 			if ( test -d "${file}" ); then
 				directory_iterator "${file}"
 			fi
 			echo ${file}
-		fi
+		# fi
 	done
 }
 
@@ -76,4 +76,15 @@ is_gitignored () {
 is_test () {
 	local testfiles="test.sh test/"
 	cmp_file "${1}" "${testfiles}" && info "${1} is a test"
+}
+
+rename_file () {
+	for file in $*; do
+		local old_name="${file}"
+		local new_name=$(echo "${file}" | sed -r "s/(_)/\-/g")
+		if ( test "${old_name}" != "${new_name}"); then
+			info "Renaming ${old_name} to ${new_name}"
+			# mv ${old_name} ${new_name}
+		fi
+	done
 }

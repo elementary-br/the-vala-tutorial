@@ -1,5 +1,4 @@
 #!/bin/sh
-gitignore=$(cat .gitignore)
 
 # Check for uncommon filenames [x]
 # broken links [ ]
@@ -19,15 +18,19 @@ check_filename () {
 	# P.S.: Works flawless <3
 	find="_"
 	for file in ${1-.}/*; do
-		if ( test -d "${file}" ); then
-			check_filename "$file"
-		fi
+		if ( ! is_test ${file} ) && ( ! is_gitignored ${file} ); then
+			for char in $find; do
+				if ( string_contains $(basename "$file") "$char" ); then
+					test_fail "$file contains $char"
+					echo -n ""
+				fi
+			done
 
-		for word in $find; do
-			if ( string_contains "$file" "$word" ); then
-				test_fail "$file contains $word"
+			# If file is a directory iterate over it
+			if ( test -d "${file}" ); then
+				check_filename "${file}"
 			fi
-		done
+		fi
 	done
 }
 
@@ -39,23 +42,38 @@ check_file () {
 	fi
 }
 
+# params: $1 > file, $2 > blacklist
+cmp_file () {
+	for file in ${2}; do
+		if ( test ${file} -ef ${1}); then
+			# Return true if is equal
+			debug "assert $1 == $file is true"
+			return 0
+		fi
+	done
+	# Return false else
+	return 1
+}
+
 # TODO: Find a way to reuse this code
 directory_iterator () {
 	for file in ${1-.}/*; do
-		if ( test -d "${file}" ); then
-			directory_iterator "$file"
+		if ( ! is_test ${file} ) && ( ! is_gitignored ${file} ); then
+			if ( test -d "${file}" ); then
+				directory_iterator "${file}"
+			fi
+			echo ${file}
 		fi
-		echo $file
 	done
 }
 
 # Check if file is gitignored
-# FIXME: Not working
 is_gitignored () {
-	for file in $gitignore; do
-		if ( string_contains ${file} ${1} ); then
-			echo "${1} is gitignored"
-			return 1
-		fi
-	done
+	local gitignore=$(cat .gitignore)
+	cmp_file "${1}" "${gitignore}" && info "${1} is gitignored"
+}
+
+is_test () {
+	local testfiles="test.sh test/"
+	cmp_file "${1}" "${testfiles}" && info "${1} is a test"
 }

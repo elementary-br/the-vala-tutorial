@@ -84,7 +84,7 @@ rename_file () {
 		local new_name=$(echo "${file}" | sed -r "s/(_)/\-/g")
 		if ( test "${old_name}" != "${new_name}"); then
 			info "Renaming ${old_name} to ${new_name}"
-			# mv ${old_name} ${new_name}
+			mv ${old_name} ${new_name}
 		fi
 	done
 }

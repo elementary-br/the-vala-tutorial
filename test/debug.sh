@@ -3,10 +3,12 @@ debug=false
 
 debug () {
 	is_debug_enable && echo "${yellow}debug: ${normal}${1}"
+	return 0
 }
 
 info () {
 	is_debug_enable && echo "${blue}info: ${normal}${1}"
+	return 0
 }
 
 is_debug_enable () {

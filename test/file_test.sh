@@ -36,7 +36,7 @@ check_filename () {
 }
 
 check_links () {
-	echo "Uninplemented"
+	unimplemented_error check_links
 }
 
 check_file () {

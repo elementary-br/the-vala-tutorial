@@ -1,3 +1,3 @@
-# The Vala Tutorial
+# Tutorial de Vala
 
-![](cover.jpg)
+![](../cover.jpg)

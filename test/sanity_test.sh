@@ -8,10 +8,6 @@ sanity_test () {
 	check_file "README.md"
 	check_file "LANGS.md"
 
-	# Testing purposes
-	# TODO: Remove later
-	check_file "FAIL.md"
-
 	# TODO
 	# Check each lang dir
 	# Needs a parser for the links.

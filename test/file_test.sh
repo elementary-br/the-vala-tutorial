@@ -8,6 +8,7 @@ file_test () {
 
 	# TODO: Should check filename on langs folders only
 	check_filename
+	check_links
 
 	# check_orfaned
 	# check_dead_links
@@ -32,6 +33,10 @@ check_filename () {
 			fi
 		fi
 	done
+}
+
+check_links () {
+	echo "Uninplemented"
 }
 
 check_file () {
@@ -86,5 +91,12 @@ rename_file () {
 			info "Renaming ${old_name} to ${new_name}"
 			mv ${old_name} ${new_name}
 		fi
+	done
+}
+
+rename_links_on_markdown () {
+	# Need read file, check if link has wrong name and swap
+	for file in $*; do
+		fix_link file
 	done
 }

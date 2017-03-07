@@ -8,6 +8,7 @@ file_test () {
 
 	# TODO: Should check filename on langs folders only
 	check_filename
+	check_links
 
 	# check_orfaned
 	# check_dead_links
@@ -34,6 +35,10 @@ check_filename () {
 	done
 }
 
+check_links () {
+	unimplemented_error check_links
+}
+
 check_file () {
 	if ( test -e $1 ); then
 		test_ok "${1} found"
@@ -58,12 +63,12 @@ cmp_file () {
 # TODO: Find a way to reuse this code
 directory_iterator () {
 	for file in ${1-.}/*; do
-		if ( ! is_test ${file} ) && ( ! is_gitignored ${file} ); then
+		# if ( ! is_test ${file} ) && ( ! is_gitignored ${file} ); then
 			if ( test -d "${file}" ); then
 				directory_iterator "${file}"
 			fi
 			echo ${file}
-		fi
+		# fi
 	done
 }
 
@@ -76,4 +81,22 @@ is_gitignored () {
 is_test () {
 	local testfiles="test.sh test/"
 	cmp_file "${1}" "${testfiles}" && info "${1} is a test"
+}
+
+rename_file () {
+	for file in $*; do
+		local old_name="${file}"
+		local new_name=$(echo "${file}" | sed -r "s/(_)/\-/g")
+		if ( test "${old_name}" != "${new_name}"); then
+			info "Renaming ${old_name} to ${new_name}"
+			mv ${old_name} ${new_name}
+		fi
+	done
+}
+
+rename_links_on_markdown () {
+	# Need read file, check if link has wrong name and swap
+	for file in $*; do
+		fix_link file
+	done
 }

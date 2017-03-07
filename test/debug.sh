@@ -7,7 +7,12 @@ debug () {
 }
 
 info () {
-	is_debug_enable && echo "${blue}info: ${normal}${1}"
+	echo "${blue}info: ${normal}${1}"
+	return 0
+}
+
+unimplemented_error () {
+	echo "${red}error:${normal} $1 was not implemented yet"
 	return 0
 }
 

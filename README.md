@@ -30,25 +30,22 @@ Existem casos onde um link quebrado, um nome com inconsistências ou um arquivo 
 
 Para executá-lo no projeto:
 
-    $ ./test.sh
+`$ ./test.sh`
 
 Além disso o gitbook também dispõe de uma ferramenta pra fazer a montagem do livro.
 
 - Para fazer a instalação
 
+`# npm install gitbook-cli -g`
 
-    # npm install gitbook-cli -g
+- ou
 
-ou
+`$ npm install gitbook-cli`
 
-    $ npm install gitbook-cli
+- Para rodar os testes
 
--  Para rodar os testes
-
-
-    $ gitbook build ./ --log=debug --debug
+`$ gitbook build ./ --log=debug --debug`
 
 - Para executar um servidor local
 
-
-    $ gitbook serve
+`$ gitbook serve`

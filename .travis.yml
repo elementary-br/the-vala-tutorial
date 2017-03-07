@@ -4,5 +4,5 @@ install:
 before script:
  - chmod +x test.sh
 script:
- - ./test
+ - ./test.sh
  - gitbook build ./ --log=debug --debug

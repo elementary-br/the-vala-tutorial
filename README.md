@@ -1,5 +1,7 @@
 <!-- Esse arquivo é o readme do github, não do livro -->
 # Tradução do The Vala Tutorial para português brasileiro.
+[![Build Status](https://travis-ci.org/elementary-br/the-vala-tutorial.svg?branch=master)](https://travis-ci.org/elementary-br/the-vala-tutorial)
+[![Telegram](https://img.shields.io/badge/join-telegram-blue.svg)](https://t.me/Vala_BR)
 
 ## Como contribuir
 

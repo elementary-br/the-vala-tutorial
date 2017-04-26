@@ -6,7 +6,8 @@ namespace NameSpaceName {
 }
 ```
 
-Everything between the braces in this statement is in the namespace *NameSpaceName* and must be referenced as such. Any code outside this namespace must either use qualified names for anything within the name of the namespace, or be in a file with an appropriate `using` declaration in order to import this namespace: 
+Tudo entre as chaves dessa declaração está no _namespace_ _NameSpaceName_ e precisa ser referênciada como tal.
+Qualquer código fora desse _namespace_ deve usar nomes qualificados para qualquer coisa dentro do nome do _namespace_, ou estar em um arquivo com a declaração `using` para importar esse _namespace_:
 
 ```vala
 using NameSpaceName;
@@ -14,15 +15,14 @@ using NameSpaceName;
 // ...
 ```
 
-For example, if the namespace *Gtk* is imported with `using Gtk;` you can simply write *Window* instead of *Gtk.Window*. A fully qualified name would only be necessary in case of ambiguity, for example between *GLib.Object* and *Gtk.Object*. 
+Por exemplo, se o _namespace_ _Gtk_ é importado com `using Gtk;` você pode escrever _Window_ invés de _Gtk.Window_. Um nome completamente qualificado poderá ser necessário apenas em casos de ambiguidade, por exemplo entre _GLib.Object_ e _Gtk.Object_.
 
-The namespace *GLib* is imported by default. Imagine an invisible `using GLib;` line at the beginning of every Vala file. 
+O _namespace_ _GLib_ é importado por padrão. Imagine uma linha invísivel `using GLib;` no ínicio de cada arquivo Vala.
 
-Everything that you don't put into a separate namespace will land in the anonymous global namespace. If you have to reference the global namespace explicitly due to ambiguity you can do that with the `global::` prefix. 
+Qualquer coisa que você não colocar em um _namespace_ separado vai incorporar um _namespace_ anónimo global. Se você precisa referenciar o _namespace_ global explicitamente devido a ambiguidade você pode fazer isso com o prefixo `global::`.
 
-Namespaces can be nested, either by nesting one declaration inside another, or by giving a name of the form *NameSpace1.NameSpace2*. 
+_Namespaces_ podem ser encadeados, tanto encadeando uma declaração dentro de outra quanto por dar um name na forma _Namespace1.NameSpace2_.
 
-Several other types of definition can declare themselves to be inside a namespace by following the same naming convention, e.g.
+Diversos outros tipos de definições podem declarar estar dentro de um _namespace_ seguindo a mesma convenção de nomenclatura, ex.
 
-`class NameSpace1.Test { ... }`. Note that when doing this, the final namespace of the definition will be the one the declaration is nested in plus the namespaces declared in the definition. 
-
+`class NameSpace1.Teste { ... }`. Note que fazendo isso, o _namespace_ da definição será o da declaração encadeada mais os _namespaces_ declarados na definição.

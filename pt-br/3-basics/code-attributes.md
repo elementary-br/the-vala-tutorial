@@ -1,8 +1,8 @@
-# Code Attributes
+# Atributos de código
 
-Code attributes instruct the Vala compiler details about how the code is supposed to work on the target platform. Their syntax is
-`[AttributeName]` or `[AttributeName(param1 = value1, param2 = value2, ...)]`.
+Atributos de códigos instruem ao compilador Vala detalhes de como o código deve funcionar na plataforma desejada. Sua sintaxe é
+`[NomeDoAtributo]` ou `[NomeDoAtributo(param1 = valor1, param2 = valor2, ...)]`.
 
-They are mostly used for bindings in *vapi* files, `[CCode(...)]` being the most prominent attribute here.
+Eles são usados mais usados para bindings nos arquivos _vapi_, `[CCode(...)]` sendo o atributo mais proeminente aqui.
 
-Another example is the `[DBus(...)]` attribute for exporting remote interfaces via [D-Bus](http://www.freedesktop.org/wiki/Software/dbus). 
+Outro exemplo é o atributo `[DBus(...)]` para exportar interfaces remotas pelo [D-Bus](http://www.freedesktop.org/wiki/Software/dbus)

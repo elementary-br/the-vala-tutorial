@@ -1,6 +1,6 @@
 # Tipos valor
 Vala suporta uma variedade de tipos simples como a maioria das outras linguagens fazem.
--   Byte, `char`, `uchar`; seus nomes são *char* por motivos históricos.
+-   Byte, `char`, `uchar`; seus nomes são _char_ por motivos históricos.
 -   Character, `unichar`; um carácter Unicode 32-bit
 -   Integer, `int`, `uint`
 -   Long Integer, `long`, `ulong`

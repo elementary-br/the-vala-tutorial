@@ -1,6 +1,6 @@
 # Inferência de tipos
 
-Vala has a mechanism called *type inference*, whereby a local variable may be defined using `var` instead of giving a type, so long as it is unambiguous what type is meant. The type is inferred from the right hand side of the assignment. It helps reduce unnecessary redundancy in your code without sacrificing static typing:
+Vala has a mechanism called _type inference_, whereby a local variable may be defined using `var` instead of giving a type, so long as it is unambiguous what type is meant. The type is inferred from the right hand side of the assignment. It helps reduce unnecessary redundancy in your code without sacrificing static typing:
 
 Vala tem um mecanismo chamado _type inference_(inferência de tipo), na qual uma variável local pode ser definida usando `var` invés de determinar um tipo, enquanto não for ambíguo que tipo é pretendido. O tipo é inferido pelo lado direito da designação. Isso ajuda a reduzir uma redundância desnecessária no seu código sem sacrificar a tipagem estática.
 

@@ -6,13 +6,13 @@ O tipo de dados para strings(_conjuntos de caracteres_) é `string`. As strings 
 string texto = "Um conjunto de caracteres";
 ```
 
-Vala oferece um recurso chamado *verbatim strings*. Strings quais as sequencias de escape (como o `\n`) não são interpretadas, quebras de linhas serão preservadas e sinais de citação não precisam ser mascarados. Elas são cercadas com tres sinais de citação. Possíveis identações após uma quebra de linha são parte da string também.
+Vala oferece um recurso chamado _verbatim strings_. Strings quais as sequencias de escape (como o `\n`) não são interpretadas, quebras de linhas serão preservadas e sinais de citação não precisam ser mascarados. Elas são cercadas com três sinais de citação. Possíveis identações após uma quebra de linha são parte da string também.
 
 ```vala
-string verbatim = """Essa é uma tão falada "verbatim string". Verbatim strings não processam sequências de escape, como \n, \t, \\, etc. Elas podem conter citações e abranger multiplas linhas.""";
+string verbatim = """Essa é uma tão falada "verbatim string". Verbatim strings não processam sequências de escape, como \n, \t, \\, etc. Elas podem conter citações e abranger múltiplas linhas.""";
 ```
 
-Strings prefixadas com '@' são templates de string. Elas podem evaluate variaveis embutidas e expressões prefixadas com '\$':
+Strings prefixadas com '@' são templates de string. Elas podem evaluate variáveis embutidas e expressões prefixadas com '\$':
 
 ```vala
 int a = 6, b = 7;
@@ -47,7 +47,7 @@ string s1 = true.to_string();           // => "true"
 string s2 = 21.to_string();             // => "21"
 ```
 
-Dois métodos úteis para escrever e ler strings de/para o console (e para suas primeiras explorações com Vala) são *stdout.printf()* e *stdin.read\_line()*:
+Dois métodos úteis para escrever e ler strings de/para o console (e para suas primeiras explorações com Vala) são _stdout.printf()_ e _stdin.read\_line()_:
 
 ```vala
 stdout.printf("Hello, world\n");
@@ -56,11 +56,11 @@ string input = stdin.read_line();
 int number = int.parse(stdin.read_line());
 ```
 
-Você já conhece o *stdout.printf()* pelo exemplo do *Olá mundo*.
+Você já conhece o _stdout.printf()_ pelo exemplo do _Olá mundo_.
 
-Atualmente, ele pode receber um número arbitrário de argumentos de tipos diferentes, no qual o primeiro argumento é uma *format string*, seguindo as mesmas regras das [strings no formato do C](http://pt.wikipedia.org/wiki/Printf).
+Atualmente, ele pode receber um número arbitrário de argumentos de tipos diferentes, no qual o primeiro argumento é uma _format string_, seguindo as mesmas regras das [strings no formato do C](http://pt.wikipedia.org/wiki/Printf).
 
-Se você precisa emitir uma mensagem de erro você pode usar o *stderr.printf()* invés do *stdout.printf()*.
+Se você precisa emitir uma mensagem de erro você pode usar o _stderr.printf()_ invés do _stdout.printf()_.
 
 Em adição o operador _in_ pode ser usado para determinar quando uma string contém outra, ex.
 

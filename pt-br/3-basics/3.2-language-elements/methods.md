@@ -1,62 +1,62 @@
-# Methods
+# Métodos
 
-Functions are called *methods* in Vala, regardless of whether they are defined inside a class or not. From now on we will stick to the term *method*. 
+Funções são chamadas _métodos_ em Vala, independente de serem definidos dentro ou fora de uma classe. A partir de agora nós irémos chama-las pelo termo _método_.
 
 ```vala
-int method_name(int arg1, Object arg2) {
+int método_nome(int arg1, Object arg2) {
     return 1;
 }
 ```
 
-This code defines a method, having the name *method\_name*, taking two arguments, one an integer and the other an *Object* (the first passed by value, the second as a reference as described). The method will return an integer, which in this case is 1. 
+Esse código define um método, tendo o nome _método_nome_, recebendo dois argumentos, um inteiro e outro _Objeto_ (O primeiro passado por valor, o segundo por referência como descrito). O método retornará um inteiro, que no caso é 1.
 
-All Vala methods are C functions, and therefore take an arbitrary number of arguments and return one value (or none if the method is declared *void*). They may approximate more return values by placing data in locations known to the calling code. Details of how to do this are in the "Parameter Directions" section in the advanced part of this tutorial. 
+Todos métodos Vala são funções C, e portanto recébem um número arbitrário de argumentos e retornam um valor (ou nenhum se o método é declarado _void_(vazio)). Eles podem retornar mais valores aproximados caso sejam postos dados em lugares conhecidos ao código chamado. Detalhes de como fazer isso estão na seção "Direções dos parâmetros" na parte avançada desse tutorial.
 
-The naming convention for methods in Vala is *all\_lower\_case* with underscores as word separators. This may be a little bit unfamiliar to C\# or Java programmers who are accustomed to *CamelCase* or *mixedCamelCase* method names. But with this style you will be consistent with other Vala and C/GObject libraries. 
+A nomenclatura convêncional para métodos em Vala é _tudo_em_caixa_baixa_ com sublinhas separando palavras. Isso pode ser um pouco desconhecido para programadores Java ou C\# que estão acostumado com nome de métodos em _CamelCase_ ou _camelCaseMesclado_. Mas com esse estilo você vai ser consistente com outras bibliotecas Vala e C/GObject.
 
-It is not possible to have multiple methods with the same name but different signature within the same scope ("method overloading"): 
-
+Não é possível ter múltiplos métodos com o mesmo nome mas diferentes assinaturas dentro do mesmo escopo(_sobrecarga de métodos_):
 
 ```vala
 void draw(string text) { }
-void draw(Shape shape) { }  // not possible
+void draw(Shape shape) { }  // não é possível
 ```
 
-This is due to the fact that libraries produced with Vala are intended to be usable for C programmers as well. In Vala you would do something like this instead: 
+Isso se deve ao fato de que bibliotecas produzidas em Vala tem pretenção de serem usaveis por programadores C também. Invés disso você pode fazer algo assim em Vala:
 
 ```vala
 void draw_text(string text) { }
 void draw_shape(Shape shape) { }
 ```
-By choosing slightly different names you can avoid a name clash. In languages that support method overloading it is often used for providing convenience methods with less parameters that chain up to the most general method: 
+Por escolher um nome diferente você pode evitar um conflito de nomes. Em linguagens que suportam sobrecarga de métodos é usada geralmente para prover métodos convenientes com menos parâmetros para encadear os métodos mais comuns:
 
 ```vala
 void f(int x, string s, double z) { }
-void f(int x, string s) { f(x, s, 0.5); }  // not possible void f(int x) { f(x, "hello"); }           // not possible
+void f(int x, string s) { f(x, s, 0.5); }  // não é possível
+void f(int x) { f(x, "hello"); }           // não é possível
 ```
 
-In this case you can use Vala's default argument feature for method parameters in order to achieve a similar behaviour with just one method. You can define default values for the last parameters of a method, so that you don't have to pass them explicitly to a method call: 
+Nesse caso você pode usar o recurso argumento padrão do Vala para parâmetros dos métodos para alcançar um comportamento similar com um único método. Você pode definir valores padrões para os últimos parâmetros de um método, para que você não precise passa-los explicitamente para uma chamada de método:
 
 ```vala
-void f(int x, string s = "hello", double z = 0.5) { }
+void f(int x, string s = "olá", double z = 0.5) { }
 ```
 
-Some possible calls of this method might be: 
+Algumas chamadas possíveis para esse método podem ser:
 
 ```vala
 f(2);
-f(2, "hi");
-f(2, "hi", 0.75);
+f(2, "oi");
+f(2, "oi", 0.75);
 ```
 
-It's even possible to define methods with real variable-length argument lists (*varargs*) like *stdout.printf()*, although not necessarily recommended. You will learn how to do that later. 
+É possível até definir métodos com a quantidade de váriaveis como argumento (_varargs_) como o _stdout.printf()_, entretanto não é necessáriamente recomentado. Você aprenderá como fazer isso depois.
 
-Vala performs a basic nullability check on the method parameters and return values. If it is allowable for a method parameter or a return value to be `null`, the type symbol should be postfixed with a `?` modifier. This extra information helps the Vala compiler to perform static checks and to add runtime assertions on the preconditions of the methods, which may help in avoiding related errors such as dereferencing a `null` reference. 
+Vala performa um teste básico de nulidade nos parâmetros dos métodos e nos valores de retorno. Se é permitido que um parâmetro ou um retorno seja `null`, o tipo deve ser pósfixado com um modificador `?`. Essa informação extra ajuda o compilador a executar checagens estáticas e a adicionar afirmações no tempo de execução a cerca das pré-condições dos métodos, os quais podem ajudar a evitar problemas relacionados a erros como dereferênciação de uma referência nula(_null_).
 
 ```vala
-string? method_name(string? text, Foo? foo, Bar bar) {
+string? nome_do_metodo(string? texto, Foo? foo, Bar bar) {
     // ...
 }
 ```
 
-In this example `text`, `foo` and the return value may be `null`, however, `bar` must not be `null`. 
+Nesse exemplo `texto`, `foo` e o retorno podem ser `null`, entretanto, `bar` não pode ser `null`.

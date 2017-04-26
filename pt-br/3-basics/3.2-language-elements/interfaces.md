@@ -5,4 +5,4 @@ interface InterfaceName : SuperInterfaceName {
 }
 ```
 
-defines an interface, i.e. a non instantiable type. In order to create an instance of an interface you must first implement its abstract methods in a non-abstract class. Vala interfaces are more powerful than Java or C\# interfaces. In fact, they can be used as [mixins](http://en.wikipedia.org/wiki/Mixin). The details of interfaces are described in the section about object oriented programming. 
+define uma interface, ex. um tipo não instánciavel. Para criar uma instância de uma interface você deve primeiro implementar seus métodos abstratos em uma class não-abstrata. As interfaces do Vala são mais poderosas que em Java ou C\#. De fato, elas podem ser usadas como [mixins(em inglês)](http://en.wikipedia.org/wiki/Mixin). Os detalhes das interfaces são descritos na seção de orientação a objetos.

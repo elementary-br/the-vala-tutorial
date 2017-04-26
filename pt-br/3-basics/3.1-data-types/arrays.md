@@ -1,6 +1,6 @@
 # Arrays (Arranjos/Vetores)
 
-Um array é declarado dando o tipo seguido por `[]` e criado usando o operador `new` ex. `int[] a = new int[10]` para criar um arranjo de numeros inteiros(_integer_). O tamanho do array pode ser obtido pela variável membro(_atributo_) **length** ex. `int count = a.length`. Note que se você escrever `Object[] a = new Object[10]` nenhum objeto vai ser criado, só o array pra armazenar-los.
+Um array é declarado dando o tipo seguido por `[]` e criado usando o operador `new` ex. `int[] a = new int[10]` para criar um arranjo de números inteiros(_integer_). O tamanho do array pode ser obtido pela variável membro(_atributo_) **length** ex. `int count = a.length`. Note que se você escrever `Object[] a = new Object[10]` nenhum objeto vai ser criado, só o array pra armazenar-los.
 
 ```vala
 int[] a = new int[10];
@@ -25,7 +25,7 @@ int[,] d = {{2, 4, 6, 8},
 d[2,3] = 42;
 ```
 
-Esse tipo de array é representado por um único bloco de memória contíguo. Arrays multi-dimensionais irregulares (`[][]`, tambem conhecido como "arranjos empilhados/arrays empilhados"), aonde cada linha pode ter um tamanho diferente, ainda não são suportados.
+Esse tipo de array é representado por um único bloco de memória contíguo. Arrays multi-dimensionais irregulares (`[][]`, também conhecido como "arranjos empilhados/arrays empilhados"), aonde cada linha pode ter um tamanho diferente, ainda não são suportados.
 
 Para encontrar o tamanho de cada dimenção em um array multi-dimensional, o membro _length_ vira um array, armazenando o tamanho de cada respectiva dimensão.
 
@@ -51,13 +51,13 @@ e += 5;
 e += 37;
 ```
 
-Você pode redimensionar um array chamando *resize()* nele. Isso vai manter o conteúdo original(o quanto couber).
+Você pode redimensionar um array chamando _resize()_ nele. Isso vai manter o conteúdo original(o quanto couber).
 
 ```vala
 int[] a = new int[5];
 a.resize(12);
 ```
-Você pode mover elementos dentro do array chamando *move(src, dest, length)* nele. A posição original vai ser preenchida com 0.
+Você pode mover elementos dentro do array chamando _move(src, dest, length)_ nele. A posição original vai ser preenchida com 0.
 
 ```vala
 uint8[] chars = "hello world".data;
@@ -65,9 +65,9 @@ chars.move (6, 0, 5);
 print ((string) chars); // "world "
 ```
 
-Se você colocar os colchetes quadrados *após* o indentificador junto com um indicador do tamanho você vai ter um array de tamanho fixo. Arrays com tamanho fixo são alocados no stack (se usado como variável local) ou alocado in-line (se usado como campo) e você não pode os realocar depois.
+Se você colocar os colchetes quadrados _após_ o indentificador junto com um indicador do tamanho você vai ter um array de tamanho fixo. Arrays com tamanho fixo são alocados no stack (se usado como variável local) ou alocado in-line (se usado como campo) e você não pode os realocar depois.
 
 ```vala
 int f[10];     // no 'new ...'
 ```
-Vala não faz nenhuma verificação de limite do acesso dos arrays na execução. Se você precisa de mais segurança deve usar uma estrutura de dados mais sofisticada como um *ArrayList*. Você vai aprender mais sobre isso depois na sessão sobre *colecões*.
+Vala não faz nenhuma verificação de limite do acesso dos arrays na execução. Se você precisa de mais segurança deve usar uma estrutura de dados mais sofisticada como um _ArrayList_. Você vai aprender mais sobre isso depois na sessão sobre _colecões_.

@@ -2,32 +2,32 @@
 
 
 ```vala
-struct StructName {
+struct NomeStruct {
     public int a;
 }
 ```
-defines a `struct` type, i.e. a compound value type. A Vala struct may have methods in a limited way and also may have private members, meaning the explicit `public` access modifier is required. 
+define um tipo `struct`, ex. um tipo valor composto. Uma _struct_ Vala pode ter métodos de uma forma limitada e também pode ter membros privados, de tal forma que o modificador de acesso `public` é requirido explicitamente.
 
 ```vala
-struct Color {
-    public double red;
-    public double green;
-    public double blue;
+struct Cor {
+    public double vermelho;
+    public double verde;
+    public double azul;
 }
 ```
 
-This is how you can initialise a struct: 
+É assim que você pode inicializar uma struct:
 
 ```vala
-// without type inference Color c1 = Color();
-Color c2 = { 0.5, 0.5, 1.0 };
-Color c3 = Color() {
+// sem inferência de tipos Cor c1 = Cor();
+Cor c2 = { 0.5, 0.5, 1.0 };
+Cor c3 = Cor() {
     red = 0.5,
     green = 0.5,
     blue = 1.0
 };
 
-// with type inference var c4 = Color();
+// com inferência de tipo var c4 = Cor();
 var c5 = Color() {
     red = 0.5,
     green = 0.5,
@@ -35,6 +35,6 @@ var c5 = Color() {
 };
 ```
 
-Structs are stack/inline allocated and copied on assignment. 
+Structs são alocados no stack/inline e copiados na atribuição.
 
-To define an array of structs:
+Para definir um _array_ de structs:

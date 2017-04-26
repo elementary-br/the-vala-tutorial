@@ -1,62 +1,61 @@
-# Operators
+# Operadores
 
     =
 
-assignment. The left operand must be an identifier, and the right must result in a value or reference as appropriate. 
+atribuição. O operando esquerdo deve ser um identificador, e o direito deve resultar em um valor ou referência apropriadamente.
 
     +, -, /, *, %
 
-basic arithmetic, applied to left and right operands. The `+` operator can also concatenate strings. 
+aritimética básica, aplicada aos operandos esquerdo e direito. O operador `+` também pode concatenar strings.
 
     +=, -=, /=, *=, %=
 
-arithmetic operation between left and right operands, where the left must be an identifier, to which the result is assigned. 
+operação aritimética entre o operador esquerdo e direito, where the left must be an identifier, para qual o resultado é atribuído.
 
     ++, --
 
-increment and decrement operations with implicit assignment. These take just one argument, which must be an identifier of a simple data type.
+operações de incremento e decremento com atribuição implicita. Esses tomam só um argumento, que deve ser um identificador de um tipo simples de dado.
 
-The value will be changed and assigned back to the identifier. These operators may be placed in either prefix or postfix positions - with the former the evaluated value of the statement will be the newly calculated value, with the latter the original value is returned. 
+O valor será mudado e atribuido de volta ao identificador. Esses operadores podem ser dispostos como prefixo ou pósfixos, - com o primeiro o valor calculado da declaração será o valor recém calculado, com o último o valor original é retornado.
 
     |, ^, &, ~, |=, &=, ^=
 
-bitwise operations: or, exclusive or, and, not. The second set include assignment and are analogous to the arithmetic versions. These can be applied to any of the simple value types. (There is of no assignment operator associated with `~` because this is a unary operator. The equivalent operation is just `a = ~a`). 
+operações _bitwise_: or(_ou_), exclusive or(_ou exclusivo_), and(_e_), not(_não_). O segundo conjunto inclui atribuição e é análogo às versões aritiméticas. Eles podem ser aplicadas a qualquer tipo valor simples. (Não existe operador de atribuição associado com `~` porque esse é o operador unário. A operação equivalente é `a = ~a`).
 
     <<, >>
 
-bit shift operations, shifting the left operand a number of bits according the right operand. 
+operações _bit shift_, desloca o operando esquerdo o número de bits de acordo com o operando direito.
 
     <<=, >>=
 
-bit shift operations, shifting the left operand a number of bits according the right operand. The left operand must be an identifier, to which the result is assigned. 
+operações _bit shift_, desloca o operando esquerdo o numero de bits de acordo com o operando direito. O operando esquerdo deve ser um identificador, o qual o resultado é atribuído.
 
     ==
 
-equality test. Evaluates to a `bool` value dependent on whether the left and right operands are equal. In the case of value types this means their values are equal, in the case of reference types that the objects are the same instance. An exception to this rule is the `string` type, which is tested for equality by value. 
+teste de igualdade. Resulta em um valor booleano(_bool_) dependendo se os operandos esquerdo e direito são iguais. No caso dos tipos valor isso significa que seus valores são iguais, no caso dos tipos referencia que os objetos são da mesma instância. Uma exceção a essa regra é o tipo `string`, que é testada em igualdade por valor.
 
     <, >, >=, <=, !=
 
-inequality tests. Evaluate to a `bool` value dependent on whether the left and right operands are different in the manner described. These are valid for simple value data types, and the `string` type. For strings these operators compare the lexicographical order. 
+teste de inigualdade. Resulta em um valor `bool` dependendo se os operandos esquerdo e direito são diferentes na maneira descrita. Eles são válidos para valores simples de dados, e para o tipo `string`. Para strings esses operadores comparam a ordem lexográfica.
 
     !, &&, ||
 
-logic operations: not, and, or. These operations can be applied to Boolean values - the first taking just one value the others two. 
+operadores lógicos: not(_não_), and(_e_), or(_ou_). Essas operações podem ser aplicadas a valores _booleanos_ - o primeiro toma um valor dos outros dois.
 
     ? :
 
-ternary conditional operator. Evaluates a condition and returns either the value of the left or the right sub-expression based on whether the condition is true or false: *condition* `?` *value if true* `:` *value if false* 
+operador de condição ternária. Resulta em uma condição e retorna a sub-expressão da esquerde ou direita baseado e, qual condição é verdadeira ou falsa: _condição_ `?` _valor se for verdade_ `:` _valor se for falso_
 
     ??
 
-null coalescing operator: `a ?? b` is equivalent to `a != null ? a : b`. This operator is useful for example to provide a default value in case a reference is *null*: 
-
+operador _null coalescing_: `a ?? b` é equivalente a `a != null ? a : b`. Esse operador é útil para prover um valor padrão no caso da referência ser nula(_null_):
 
 ```vala
-stdout.printf("Hello, %s!\n", name ?? "unknown person");
+stdout.printf("Olá, %s!\n", nome ?? "pessoa desconhecida");
 ```
 
     in
 
-checks if the right operand contains the left operand. This operator works on arrays, strings, collections or any other type that has an appropriate *contains()* method. For strings it performs a substring search. 
+checa se o operando direito contem o operando esquerdo. Esse operador funciona em arrays, strings, coleções ou qualquer outro tipo que possua o método _contains()_. Para strings ele executa uma busca de substring.
 
-Operators cannot be overloaded in Vala. There are extra operators that are valid in the context of lambda declarations and other specific tasks - these are explained in the context they are applicable. 
+Operadores não podem ser sobrecarregados em Vala. Existem operadores extras que são válidos no contexto de expressões lambda e outras tarefas específicas - estes são explicados no contexto onde são aplicáveis.

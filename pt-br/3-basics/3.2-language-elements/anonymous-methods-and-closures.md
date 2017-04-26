@@ -1,6 +1,5 @@
 # Métodos anônimos/Closures
 
-<!-- TODO: Traduzir os exemplos -->
 ```vala
 (a) => { stdout.printf("%d\n", a); }
 ```
@@ -11,7 +10,7 @@ Um método anônimo por si só como como acima não faz muito sentido. Ele só �
 
 Tenha em mente que nem o parâmetro nem o tipo de retorno é informado explicitamente. Invés disso os tipos são inferidos pela assinatura da delegação usada.
 
-Designando um método anônimo para uma variável delegada:
+Atribuindo um método anônimo para uma variável delegada:
 
 ```vala
 delegate void PrintIntFunc(int a);
@@ -20,7 +19,7 @@ void main() {
     PrintIntFunc p1 = (a) => { stdout.printf("%d\n", a); };
     p1(10);
 
-    // Curly braces are optional if the body contains only one statement:
+    // Chaves são opcionais se o corpo conter só uma declaração:
     PrintIntFunc p2 = (a) => stdout.printf("%d\n", a);
     p2(20);
 }
@@ -52,7 +51,7 @@ Métodos anônimos são [closures](http://pt.wikipedia.org/wiki/Closure_(ciênci
 delegate int IntOperation(int i);
 
 IntOperation curried_add(int a) {
-    return (b) => a + b;  // 'a' is an outer variable
+    return (b) => a + b;  // 'a' é uma váriavel externa
 }
 
 void main() {
@@ -60,4 +59,3 @@ void main() {
 }
 ```
 Nesse de _adição com currying_(veja [Currying](http://pt.wikipedia.org/wiki/Currying)) retorna um método recém criado que preserva o valor de _a_. Esse método retornado é chamado diretamente depois com 4 como argumento resultante na soma de dois números.
-//TODO: In this example *curried\_add* (see [Currying](http://en.wikipedia.org/wiki/Currying)) returns a newly created method that preserves the value of *a*. This returned method is directly called afterwards with 4 as argument resulting in the sum of the two numbers.

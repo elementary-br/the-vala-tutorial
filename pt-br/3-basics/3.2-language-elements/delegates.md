@@ -1,11 +1,10 @@
-# Delegates
+# Delegações
 
 ```vala
 delegate void DelegateType(int a);
 ```
 
-Delegates represent methods, allowing chunks of code to be passed around like objects. The example above defines a new type named *DelegateType*
-which represents methods taking an *int* and not returning a value. Any method that matches this signature may be assigned to a variable of this type or passed as a method argument of this type. 
+Delegações representam métodos, permitindo pedaços de código serem passados como objetos. O exemplo acima define um novo tipo chamado _DelegateType_ no qual representa métodos recebendo um _int_ e não retornando valor. Qualquer método que se encaixe nessa assinatura pode ser atribuído à uma váriavel do tipo ou passada como um argumento do método desse tipo.
 
 ```vala
 delegate void DelegateType(int a);
@@ -15,17 +14,17 @@ void f1(int a) {
 }
 
 void f2(DelegateType d, int a) {
-    d(a);       // Calling a delegate
+    d(a);       // Chamando uma delegaçao
 }
 
 void main() {
-    f2(f1, 5);  // Passing a method as delegate argument to another method
+    f2(f1, 5);  // Passando um método como argumento de delegação à outro método
 }
 ```
 
-This code will execute the method *f2*, passing in a reference to method *f1* and the number 5. *f2* will then execute the method *f1*, passing it the number. 
+Esse código executará o método _f2_, passando por referencia o método _f1_ e o número 5. _f2_ então executará o método _f1_, passando o número.
 
-Delegates may also be created locally. A member method can also be assigned to a delegate, e.g, 
+Delegações podem ser criadas localmente também. O método membro também pode ser designado à uma delegação,  ex.
 
 ```vala
 class Foo {

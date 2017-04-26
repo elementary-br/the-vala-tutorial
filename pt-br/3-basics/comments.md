@@ -1,14 +1,14 @@
-# Comments
-Vala allows comments to be recorded in code in different ways. 
+# Comentários
+Vala permite que comentários sejam registrados no código de diferentes formas.
 
 ```vala
-// Comment continues until end of line
+// O comentário continua até o final da linha
 
-/* Comment lasts between delimiters */
+/* O comentário dura entre os delimitadores */
 
 /**
- * Documentation comment
+ * Comentário de documentação
  */
 ```
 
-These are handled in the same way as in most other languages and so need little explanation. Documentation comments are actually not special to Vala, but a documentation generation tool like [Valadoc](/Projects/Valadoc) will recognise them. 
+Esses são manipulados da mesma forma que na maioria das outras linguagens e então precisa de pouca explicação. Os comentários de documentação não são especiais para Vala, mas uma ferramenta de geração de documentação como o [Valadoc](/Projects/Valadoc) irá reconhece-los.

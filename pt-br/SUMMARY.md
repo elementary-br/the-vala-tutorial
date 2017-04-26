@@ -56,7 +56,7 @@
    * [Coleções](5-advanced-features/5.1-collections/README.md)
        * [ArrayList](5-advanced-features/5.1-collections/README.md#arraylist)
        * [HashMap](5-advanced-features/5.1-collections/README.md#hashmap)
-       * [HashSet](5-advanced-features/5.1-collections/README.md#hashset) 
+       * [HashSet](5-advanced-features/5.1-collections/README.md#hashset)
        * [Read-Only Views](5-advanced-features/5.1-collections/README.md#read-only-views)
    * [Métodos com suporte de sintaxe](5-advanced-features/methods-with-syntax-support.md)
    * [Multi-Threading](5-advanced-features/5.2-multi-threading/README.md)

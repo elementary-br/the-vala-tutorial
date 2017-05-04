@@ -22,13 +22,13 @@ public class Teste : GLib.Object {
 }
 ```
 
-Esse código introduz uma nova classe chamada "Teste", usando uma síntaxe familiar. O primeiro mémbro dessa classe é um sinal, chamado "sig\_1", que é definido recebendo um inteiro. No método principal do programa(_main_), nós primeiro criamos uma instância de Teste - Um requerimento desde que sinais sempre pertencem à instâncias da classe. Em seguida, nós atribuimos para nossa instância um gerenciador de sinal "sig\_1", no qual definimos uma expressão lambda. A definição dita que o método receberá dois argumentos quais chamaremos "t" e "a", mas não provemos tipos. //TODO: We can be this terse because porque Vala já conhece a definição do sinal e pode compreender que tipos são requeridos.
+Esse código introduz uma nova classe chamada "Teste", usando uma síntaxe familiar. O primeiro mémbro dessa classe é um sinal, chamado "sig\_1", que é definido recebendo um inteiro. No método principal do programa(_main_), nós primeiro criamos uma instância de Teste - Um requerimento desde que sinais sempre pertencem à instâncias da classe. Em seguida, nós atribuímos para nossa instância um gerenciador de sinal "sig\_1", no qual definimos uma expressão lambda. A definição dita que o método receberá dois argumentos quais chamaremos "t" e "a", mas não provemos tipos. Nos podemos ser concisos assim porque Vala já conhece a definição do sinal e pode compreender que tipos são requeridos.
 
-The reason there are two parameters to the handler is that whenever a signal is emitted, the object on which it is emitted is passed as the first argument to the handler. The second argument is that one that the signal says it will provide.
+A razão pela qual existem dois parâmetros para gerir os sinais é que quando um sinal é emitido, o objeto ao qual ele é emitido é passado como primeiro argumento ao gerenciador. O segundo argumento é o que o sinal providencia.
 
-Finally, we get impatient and decide to emit a signal. We do this by calling the signal as though it was a method of our class, and allow gobject to take care of forwarding the message to all attached handlers. Understanding the mechanism used for this is not required to use signals from Vala.
+Finalmente, nós ficamos impacientes e decidimos emitir um sinal. Nós fazemos fazemos isso chamando o sinal como se fosse um método da nossa classe, e isso permite ao gobject de tomar conta de encaminhar a mensagem a todos os gerenciadores de sinais. Compreender os mecanismos usados para isso não é um requerimento para se usar sinais em Vala.
 
-NB: Currently the `public` access modifier is the only possible option - all signals can be both connected to and emitted by any piece of code.
+[N.B.](https://pt.wikipedia.org/wiki/Nota_bene): Atualmente o modificador de acesso `public` é a única opção - todos os sinais podem ser conectados e emitidos por qualquer parte do código.
 
 ```vala
     [Signal (action=true, detailed=true, run=true, no_recurse=true, no_hooks=true)]

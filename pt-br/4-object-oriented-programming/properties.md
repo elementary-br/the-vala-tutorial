@@ -1,8 +1,9 @@
-# Properties
+# Propriedades
 
-It is good object oriented programming practice to hide implementation details from the users of your classes ([information hiding principle](http://en.wikipedia.org/wiki/Information_hiding)), so you can later change the internals without breaking the public API. One practice is to make fields private and provide accessor methods for getting and setting their values (getters and setters). 
+É uma boa prática de orientação à objetos ocultar detalhes da implementação para os úsuarios de suas classes([])
+It is good object oriented programming practice to hide implementation details from the users of your classes ([information hiding principle](http://en.wikipedia.org/wiki/Information_hiding)), so you can later change the internals without breaking the public API. One practice is to make fields private and provide accessor methods for getting and setting their values (getters and setters).
 
-If you're a Java programmer you will probably think of something like this: 
+If you're a Java programmer you will probably think of something like this:
 
 ```vala
 class Person : Object {
@@ -18,14 +19,14 @@ class Person : Object {
 }
 ```
 
-This works, but Vala can do better. The problem is that these methods are cumbersome to work with. Let's suppose that you want to increase the age of a person by one year: 
+This works, but Vala can do better. The problem is that these methods are cumbersome to work with. Let's suppose that you want to increase the age of a person by one year:
 
 ```vala
 var alice = new Person();
 alice.set_age(alice.get_age() + 1);
 ```
 
-This is where properties come into play: 
+This is where properties come into play:
 
 ```vala
 class Person : Object {
@@ -39,9 +40,9 @@ class Person : Object {
 }
 ```
 
-This syntax should be familiar to C\# programmers. A property has a `get` and a `set` block for getting and setting its value. `value` is a keyword that represents the new value that should be assigned to the property. 
+This syntax should be familiar to C\# programmers. A property has a `get` and a `set` block for getting and setting its value. `value` is a keyword that represents the new value that should be assigned to the property.
 
-Now you can access the property as if it was a public field. But behind the scenes the code in the get and set blocks is executed. 
+Now you can access the property as if it was a public field. But behind the scenes the code in the get and set blocks is executed.
 
 ```vala
 var alice = new Person();
@@ -49,7 +50,7 @@ alice.age = alice.age + 1;  // or even shorter:
 alice.age++;
 ```
 
-If you only do the standard implementation as shown above then you can write the property even shorter: 
+If you only do the standard implementation as shown above then you can write the property even shorter:
 
 ```vala
 class Person : Object {
@@ -58,7 +59,7 @@ class Person : Object {
 }
 ```
 
-With properties you can change the internal working of classes without changing the public API. For example: 
+With properties you can change the internal working of classes without changing the public API. For example:
 
 ```vala
 static int current_year = 2525;
@@ -73,16 +74,16 @@ class Person : Object {
 }
 ```
 
-This time the age is calculated on the fly from the year of birth. Note that you can do more than just simple variable access or assignment within the get and set blocks. You could do a database access, logging, cache updates, etc. 
+This time the age is calculated on the fly from the year of birth. Note that you can do more than just simple variable access or assignment within the get and set blocks. You could do a database access, logging, cache updates, etc.
 
-If you want to make a property read-only for the users of the class you should make the setter private: 
+If you want to make a property read-only for the users of the class you should make the setter private:
 
 
 ```vala
     public int age { get; private set; default = 32; }
 ```
 
-Or, alternatively, you can leave out the set block: 
+Or, alternatively, you can leave out the set block:
 
 ```vala
 class Person : Object {
@@ -103,7 +104,7 @@ Properties may not only have a name but also a short description (called *nick*)
 
 Properties and their additional descriptions can be queried at runtime. Some programs such as the [Glade](http://glade.gnome.org/) graphical user interface designer make use of this information. In this way Glade can present human readable descriptions for properties of GTK+ widgets.
 
-Every instance of a class derived from `GLib.Object` has a signal called `notify`. This signal gets emitted every time a property of its object changes. So you can connect to this signal if you're interested in change notifications in general: 
+Every instance of a class derived from `GLib.Object` has a signal called `notify`. This signal gets emitted every time a property of its object changes. So you can connect to this signal if you're interested in change notifications in general:
 
 ```vala
 obj.notify.connect((s, p) => {
@@ -112,7 +113,7 @@ obj.notify.connect((s, p) => {
 ```
 
 `s` is the source of the signal (`obj` in this example), `p` is the property information of type *ParamSpec*
-for the changed property. If you're only interested in change notifications of a single property you can use this syntax: 
+for the changed property. If you're only interested in change notifications of a single property you can use this syntax:
 
 ```vala
 alice.notify["age"].connect((s, p) => {
@@ -122,7 +123,7 @@ alice.notify["age"].connect((s, p) => {
 
 Note that in this case you must use the string representation of the property name where underscores are replaced by dashes: `my_property_name` becomes `"my-property-name"` in this representation, which is the GObject property naming convention.
 
-Change notifications can be disabled with a `CCode` attribute tag immediately before the declaration of the property: 
+Change notifications can be disabled with a `CCode` attribute tag immediately before the declaration of the property:
 
 
 ```vala

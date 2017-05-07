@@ -16,6 +16,6 @@ O parâmetro `-o` solicita que um arquivo de objeto seja criado, em vez de apena
 
 ### vapigen
 
-*vapigen* é uma ferramenta para fazer Bindings. Ele cria arquivos VAPI a partir de metadados de uma biblioteca e qualquer informação extra necessária. Veja também [Vala Bindings Tutorial](/ Projects / Vala / Bindings).
+*vapigen* é uma ferramenta para fazer Bindings. Ele cria arquivos VAPI a partir de metadados de uma biblioteca e qualquer informação extra necessária. Veja também [Vala Bindings Tutorial](/Projects/Vala/Bindings).
 
 <!-- ### vala-gen-introspect -->

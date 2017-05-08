@@ -1,6 +1,6 @@
-# Chained Relational
+# Relação encadeada
 
-This feature allows you to write complex relational expressions like
+Este recurso permite que você escreva expressões relacionais complexas como
 
 ```vala
 if (1 < a && a < 5) {}
@@ -10,7 +10,7 @@ if (0 < a && a < b && b < c && c < d && d < 255) {
 }
 ```
 
-in a more natural way: 
+De uma forma mais natural:
 
 
 ```vala

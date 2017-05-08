@@ -1,21 +1,20 @@
-# Strict Non-Null Mode
+# Modo não-nulo rigoroso
 
-If you compile your code with `--enable-experimental-non-null` the Vala compiler will run in strict non-null type checking mode and consider *every* type to be not nullable by default unless it is explicitly declared nullable by marking it with a question mark: 
+Se você compilar seu código com `--enable-experimental-non-null` o compilador Vala será executado verificando se o tipo é não-nulo e considerará que o tipo *every* não deve ser nulo por padrão, a menos que seja explicitamente declarado nulo por marcação com um ponto de interrogação:
 
 ```vala
 Object o1 = new Object();     // not nullable
 Object? o2 = new Object();    // nullable
 ```
 
-The compiler will perform a static compile-time analysis to ensure that no nullable reference is assigned to a non-nullable reference, e.g. this won't be possible: 
+O compilador irá executar uma análise de tempo de compilação estática para garantir que nenhuma referência anulável seja atribuída a uma referência não nula. Por exemplo, Isso não será possível:
 
 ```vala
 o1 = o2;
 ```
-*o2* could be *null* and *o1* was declared non-nullable, so this assignment is forbidden. However, you can override this behaviour with an explicit non-null cast if you're sure that *o2* is not *null*: 
+*o2* pode ser *null* e *o1* foi declarado não-nulo, portanto, esta atribuição é proibida. No entanto, você pode substituir esse comportamento com um elenco explícito não nulo se tiver certeza de que *o2* não é *nulo*:
 
 ```vala
 o1 = (!) o2;
 ```
-
-The strict non-null mode helps in avoiding unwanted *null* dereferencing errors. This feature would come to full potential if the nullability of all return types in bindings was marked correctly, which is currently not always the case. 
+Este modo rigoroso de não-nulo ajuda a evitar indesejaveis erros de derreferenciação em _null_(objetos nulos). Esse recurso poderia chegar ao seu pleno potêncial se a nulabilidade dos tipos de retorno nos bindings(_vinculos de bibliotecas C_) fossem marcados corretamente, o que não é sempre o caso.

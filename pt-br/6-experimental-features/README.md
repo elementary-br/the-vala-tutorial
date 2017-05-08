@@ -1,3 +1,3 @@
-# Experimental Features
+# Recursos esperimentais
 
-Some features of Vala are experimental. This means they are not fully tested and might be subject to changes in future versions. 
+Algumas características de Vala são experimentais. Isso significa que elas não estão totalmente testadas e podem estar sujeitas a alterações em versões futuras.

@@ -40,7 +40,7 @@ Compile o código do aplicativo, dizendo ao compilador que queremos vincular a b
 
     $ valac -X -I. -X -L. -X -ltest -o hello hello.vala test.vapi --basedir ./
 
-Agora podemos executar o programa. Este comando indica que quaisquer bibliotecas necessárias serão encontradas no diretório atual.
+Agora podemos executar o programa. Este comando indica que qualquer biblioteca necessária será encontrada no diretório atual.
 
     $ LD_LIBRARY_PATH=$PWD ./hello
 
@@ -49,7 +49,7 @@ A saída do programa deve ser:
     Hello World, MyLib
     The sum of 4 and 5 is 9
 
-Você também pode criar um arquivo GIR GObject Introspection para sua biblioteca com a opção `--gir`:
+Você também pode criar um arquivo GIR GObjectIntrospection para sua biblioteca com a opção `--gir`:
 
     valac -C test.vala --library test --gir Test-1.0.gir
 

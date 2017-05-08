@@ -7,12 +7,12 @@ Object o1 = new Object();     // not nullable
 Object? o2 = new Object();    // nullable
 ```
 
-O compilador irá executar uma análise de tempo de compilação estática para garantir que nenhuma referência anulável seja atribuída a uma referência não nula. Por exemplo, Isso não será possível:
+O compilador irá executar uma análise de tempo de compilação estática para garantir que nenhuma referência nula seja atribuída a uma referência não-nula. Por exemplo, Isso não será possível:
 
 ```vala
 o1 = o2;
 ```
-*o2* pode ser *null* e *o1* foi declarado não-nulo, portanto, esta atribuição é proibida. No entanto, você pode substituir esse comportamento com um elenco explícito não nulo se tiver certeza de que *o2* não é *nulo*:
+*o2* pode ser *null* e *o1* foi declarado não-nulo, portanto, esta atribuição é proibida. No entanto, você pode substituir esse comportamento com um elenco explícito não-nulo se tiver certeza de que *o2* não é *nulo*:
 
 ```vala
 o1 = (!) o2;

@@ -15,7 +15,7 @@ O *i* à direita faz com que a expressão não seja insensível. Você pode arma
 Regex regex = /foo/;
 ```
 
-Um exemplo de substituição usando expressão regular:
+Um exemplo de substituição de string usando expressão regular:
 
 ```vala
 var r = /(foo|bar|cow)/;

@@ -1,7 +1,7 @@
-# Properties
+# Propriedades
 
-An interface can define properties that must be implemented for classes. Implementator class must define a property with the same signature and access permissions to the property's `get` and `set`. 
+Uma interface pode definir propriedades que precisam ser implementadas para classes. A classe implementadora precisa definir uma propriedade com a mesma assinatura e permissão de acesso ao `get` e `set`.
 
-As any GObject property, you can define a body to property's `set` and `get` in the implementator class, when no body is used values are set and get by default. If given, you must define a `private` field to store the properties values to be used outside or inside the class. 
+Como qualquer propriedade GObject, você pode definir um corpo para o `get` e `set` da propriedade na classe implementadora, quando nenhum corpo é usado valores são set e get por padrão. Se dados, você precisa definir um campo privado para guardar os valores da propriedade para ser usado dentro ou fora da classe.
 
-`Callable` interface definition, defines an `answering` property. In this case this interface defines a `answering` with a `protected set`, allowing a read only property for any object using an instance of `Callable`, but allows class implementors to write values to it, like `TechPhone` class does when implements `hang()` method. 
+A definição da interface `Discavel`, define uma propriedade `atendendo`. Nesse caso essa interface define um `atendendo` com um `protected set`, permitindo uma propriedade somente leitura para qualquer objeto usando uma instância de `Discavel`, mas permite que os implementadores da classe escrevam valores nela, como a classe `SmartPhone` faz quando implementa o método `suspender()`.

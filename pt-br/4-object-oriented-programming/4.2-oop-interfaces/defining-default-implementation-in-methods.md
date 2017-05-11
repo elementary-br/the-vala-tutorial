@@ -1,62 +1,60 @@
-# Defining default implementation in methods
+# Definindo padrão de implementação em métodos
 
-There's another important difference between Vala interfaces and Java/C\# interfaces: Vala interfaces may have non-abstract methods.
+Existe também outra diferença importante entre interfaces de Vala e Java/C\# : As interfaces de Vala podem ter métodos não-abstratos.
 
-Vala actually allows method implementations in interfaces, then a method with a default implementation must be declared as `virtual`. Due to this fact Vala interfaces can act as [mixins](http://en.wikipedia.org/wiki/Mixins). This is a restricted form of multiple inheritance. 
-
-
+Vala permite implementação de métodos em interfaces, então um método com uma implementação padrão deve ser declarado como `virtual`. Devido a este fato interfaces Vala podem agir como [mixins(em inglês)](http://en.wikipedia.org/wiki/Mixins).Isso é uma forma restrita de múltiplas heranças.
 
 ```vala
-public interface Callable : GLib.Object {
-   public abstract bool answering { get; protected set; }
-   public abstract void answer ();
-   public virtual bool hang ()
+public interface Discavel : GLib.Object {
+   public abstract bool atentendo { get; protected set; }
+   public abstract void atender ();
+   public virtual bool suspender ()
    {
-      answering = false;
+      atender = false;
       return true;
    }
 }
 ```
 
-Interface `Callable` defines an abstract property called `answering`, where any class implementing this interface can monitor the state of a call, details about `answer` a call is a mautter of the implementator, but `hang` defines a default implementation to set `answering` to false when hanging a call. 
+A interface `Discavel` define uma propriedade abstrata chamada `atendendo`, aonde qualquer classe implementando essa interface pode monitorar o estado de uma chamada, detalhes sobre `atender` são um problema do implementador, mas `suspender` define uma implementação padrão para por `atendendo` em falso quando uma chamada for suspensa.
 
 ```vala
-public class Phone : GLib.Object, Callable {
-   public bool answering { get; protected set; }
-   public void answer ()
+public class Fone : GLib.Object, Discavel {
+   public bool atendendo { get; protected set; }
+   public void atender ()
    {
-     /* answer code implementation */
+     /* implementação de código do responder */
    }
-   
+
    public static void main ()
    {
-      var f = new Phone ();
-      if (f.hang ())
-         stdout.printf("Hand done.\n");
+      var f = new Fone ();
+      if (f.suspender ())
+         stdout.printf("Suspenção concluída.\n");
       else
-         stdout.printf("Hand Error!\n");
-      stdout.printf("END\n");
+         stdout.printf("Erro na suspenção!\n");
+      stdout.printf("FIM\n");
    }
 }
 ```
 
-When compiling and running, you will find that `Phone` class actually no implements `Callable.hang()` method, but it is able to use it, then the result is a message `Hang done.`
+Quando compilar e executar, você discobrirá que a classe `Fone` não implementa o método `Discavel.suspender()`, mas é capaz de usa-lo, então o resultado é a mensagem `Suspenção concluída`.
 
 ```vala
-public class TechPhone : GLib.Object, Callable
+public class SmartPhone : GLib.Object, Discavel
 {
-   public bool answering { get; protected set; }
-   public void answer ()
+   public bool atendendo { get; protected set; }
+   public void atender ()
    {
-     /* answer code implementation */
+      /* implementação de código do responder */
    }
-   public bool hang ()
+   public bool suspender ()
    {
-      answering = false;
-      stdout.printf ("TechPhone.hang () implementation!");
+      atendendo = false;
+      stdout.printf ("Implementação SmartPhone.suspender ()!");
       return false;
    }
 }
 ```
 
-In this case `TechPhone` is another implementation to `Callable`, then when `hang()` method is called on an instance of `TechPhone` it will always return `false` and print the message `TechPhone.hang () implementation!`, hidding completelly `Callable.hang()` default implementation. 
+Nesse caso `SmartPhone` é outra implementação ao `Discavel`, então quando o método `suspender()` é chamado na instância de `SmartPhone` ele retornará `falso` e imprimirá a mensagem `Implementação SmartPhone.suspender ()!`, escondendo completamente a implementação padrão `Discavel.suspender()`

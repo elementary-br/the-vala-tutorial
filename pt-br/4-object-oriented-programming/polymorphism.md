@@ -1,10 +1,8 @@
-# Polymorphism
+# Polimorfismo
 
+_Polimorfismo_ descreve o jeito no qual um mesmo objeto pode ser usado como se fosse mais de um tipo distinto. Diversas das técnicas aqui descritas sugerem como isso é possível em Vala: Uma instancia de uma classe pode ser usada como em uma instancia de uma superclasse, ou de qualquer interface implementada, sem qualquer conhecimento do seu tipo.
 
-*Polymorphism* describes the way in which the same object can be used as though it were more than one distinct type of thing. Several of the techniques already described here suggest how this is possible in Vala: An instance of a class may be used as in instance of a superclass, or of any implemented interfaces, without any knowledge of its actual type.
-
-
-A logical extension of this power is to allow a subtype to behave differently to its parent type when addressed in exactly the same way. This is not a very easy concept to explain, so I'll begin with an example of what will happen if you do not directly aim for this goal:
+Uma extensão lógica desse poder é permitir que um subtipo haja diferente quando endereçado exatamente da mesma forma. Isso não é um conceito muito fácil de explicar, então vamos começar com um exemplo que mostrará o que acontece se você não buscar esse objetivo:
 
 ```vala
 class SuperClass : GLib.Object {
@@ -20,7 +18,7 @@ class SubClass : SuperClass {
 }
 ```
 
-These two classes both implement a method called "method\_1", and "Sub``Class" therefore contains two methods called "method\_1", as it inherits one from "Super``Class". Each of these may be called as the following code shows: 
+Essas duas classes implementam o mesmo método chamado "method\_1" e a `SubClass` portanto contém dois métodos chamados "method\_1", por herdar uma da `SuperClass`. Cada um desses podem ser chamados como o código a seguir mostra:
 
 ```vala
 SubClass o1 = new SubClass();
@@ -29,9 +27,10 @@ SuperClass o2 = o1;
 o2.method_1();
 ```
 
-This will actually result in two different methods being called. The second line believes "o1" to be a "Sub``Class" and will call that class's version of the method. The fourth line believes "o2" to be a "Super``Class" and will call that class's version of the method. 
+Isso irá resultar em dois diferentes métodos sendo chamados. A segunda linha acredita que "o1" seja uma `SubClass` e vai chamar aquela versão do método. A quarta linha espera que "o2" seja uma `SuperClass` e vai chamar o método daquela classe.
 
-The problem this example exposes, is that any code holding a reference to "Super``Class" will call the methods actually described in that class, even in the actual object is of a subclass. The way to change this behaviour is using virtual methods. Consider the following rewritten version of the last example: 
+O problema que esse exemplo expõe, é que qualquer código mantendo uma referência à `SuperClass` vai chamar o método descrito naquela classe, mesmo que o objeto seja uma subclasse. O jeito de mudar esse comportamento é usando métodos virtuais.
+Considere a seguinte versão reescrita do último exemplo:
 
 ```vala
 class SuperClass : GLib.Object {
@@ -47,15 +46,15 @@ class SubClass : SuperClass {
 }
 ```
 
-When this code is used in the same way as before, "Sub``Class"'s "method\_1" will be called twice. This is because we have told the system that "method\_1" is a virtual method, meaning that if it is overridden in a subclass, that new version will always be executed on instances of that subclass, regardless of the knowledge of the caller. 
+Quando esse código é usado da mesma forma que antes, O método "method\_1" da `SubClass` será chamado duas vezes. Isso é porque nos dissemos ao sistema que "method\_1" é um método virtual, significando que se for sobreposto em uma subclasse, essa nova versão sempre será executada nas instâncias dessa subclasse, independente do conhecimento do instanciador.
 
-This distinction is probably familiar to programmers of some languages, such as C++, but it is in fact the opposite of Java style languages, in which steps must be taken to prevent a method being virtual. 
+Essa distinção é provavelmente familiar à programadores de algumas linguagens, como C++, mas é de fato o oposto do estilo de linguagens como Java, no qual os passos devem ser tomados para prevenir que um método seja virtual.
 
-You will probably now also have recognised that when method is declared as `abstract` it must also be virtual. Otherwise, it would not be possible to execute that method given an apparent instance of the type it was declared in. When implementing an abstract method in a subclass, you may therefore choose to declare the implementation as `override`, thus passing on the virtual nature of the method, and allowing subtypes to do the same if they desire. 
+Você provavelmente reconheceu também agora que quando um método é declarado como `abstract` ele também deve ser virtual. Caso contrário, não seria possível executar dado método numa instância do tipo em que foi declarado. Quando implementamos um método abstrato numa subclasse, você pode portanto escolher declarar a implementação como `override`, assim passando a natureza do método virtual, e permitindo que subtipos façam o mesmo se for desejado.
 
-It's also possible to implement interface methods in such a way that subclasses can change the implementation. The process in this case is for the initial implementation to declare the method implementation to be `virtual`, and then subclasses can override as required.
+Também é possível implementar métodos de interface de forma que as subclasses possam mudar a implementação. O processo nesse caso é declarar a implemetação inicial como método `virtual`, e então as subclasses podem sobrepor quando necessário.
 
-When writing a class, it is common to want to use functionality defined in a class you have inherited from. This is complicated where the method name is used more than one in the inheritance tree for your class. For this Vala provides the `base` keyword. The most common case is where you have overridden a virtual method to provide extra functionality, but still need the parent class' method to be called. The following example shows this case: 
+Na hora de escrever uma classe, é comum querer usar funcionalidades definida em uma classe que você herdou. Isso é complicado quando o mesmo nome de método é usado mais de uma vez na arvore de heranças da sua classe. Para esse propósito Vala provê a palavra chave `base`. O caso mais comum é quando você sobrepôs um método virtual pra prover funcionalidades extras, mas ainda quer que o método da classe base seja chamado. O exemplo a seguir mostra esse caso:
 
 ```vala
 public override void method_name() {
@@ -64,7 +63,7 @@ public override void method_name() {
 }
 ```
 
-Vala also allows properties to be virtual: 
+Vala também permite que as propriedades sejam virtuais:
 
 ```vala
 class SuperClass : GLib.Object {

@@ -1,11 +1,10 @@
-# Generics
+# Genéricos
 
-Vala includes a runtime generics system, by which a particular instance of a class can be restricted with a particular type or set of types chosen at construction time. This restriction is generally used to require that data stored in the object must be of a particular type, for example in order to implement a list of objects of a certain type. In that example, Vala would make sure that only objects of the requested type could be added to the list, and that on retrieval all objects would be cast to that type. 
+Vala inclúi um sistema genérico de tempo de execução, pelo qual uma particular instância de uma classe pode ser restrita com um tipo particular ou um conjunto de tipos escolhidos no tempo de construção. Essa restrição é geralmente usada para exigir que o dado guardado no objeto deve ser de um tipo particular, por exemplo a fim de implementar uma lista de objetos de um certo tipo. No exemplo, Vala poderia ter certeza que somente o objeto de um tipo requerido pudesse ser adicionado a lista, e que na reaquisição todos os objetos poderiam ser convertidos naquele tipo.
 
-In Vala, generics are handled while the program is running. When you define a class that can be restricted by a type, there still exists only one class, with each instance customised individually. This is in contrast to C++ which creates a new class for each type restriction required - Vala's is similar to the system used by Java. This has various consequences, most importantly: that static members are shared by the type as a whole, regardless of the restrictions placed on each instance; and that given a class and a subclass, a generic refined by the subclass can be used as a generic refined by the class. 
+Em Vala, genéricos são manipulados enquanto o programa está em execução. Quando você define uma classe que pode ser restrito à um tipo, existe apenas uma única classe, com cada instância personalizada individualmente. Isso contrasta com C++ que cria uma nova classe para cada tipo de restrição requerido - um sistema similar a Vala é usado em Java. Isso tem várias consequencias, as mais importantes: os membros estáticos são compartilhados por um tipo como um todo, independente das restrições contidas em cada instância, e dadas classe e subclasse, um genérico aprimorado por uma subclasse pode ser usado como um genérico aprimorado pela classe.
 
-The following code demonstrates how to use the generics system to define a minimal wrapper class: 
-
+O código a seguir demonstra como utilizar o sistema genérico pra definir uma classe envoltória mínima(_wrapper_):
 
 ```vala
 public class Wrapper<G> : GLib.Object {
@@ -21,19 +20,19 @@ public class Wrapper<G> : GLib.Object {
 }
 ```
 
-This "Wrapper" class must be restricted with a type in order to instantiate it - in this case the type will be identified as "G", and so instances of this class will store one object of "G" type, and have methods to set or get that object. (The reason for this specific example is to provide reason explain that currently a generic class cannot use properties of its restriction type, and so this class has simple get and set methods instead.) 
+Essa classe "Wrapper" deve ser restrita com um tipo para ser instanciada - nesse caso o tipo será identificado como "G", e suas instâncias de classe guardarão um objeto do tipo "G", e terão métodos para receber ou enviar tal objeto. (A razão para esse exemplo é para explicar que atualmente uma classe genérica não pode usar propriedades de seu tipo restrito, portanto invés disso essa classe tem métodos get e set).
 
-In order to instantiate this class, a type must be chosen, for example the built in `string` type (in Vala there is no restriction on what type may be used in a generic). 
+A fim de instânciar essa classe, um tipo deve ser escolhido, por exemplo o tipo embutido `string`(em Vala não existem restrições sobre quais tipos podem ser usados como genéricos).
 
 ```vala
 var wrapper = new Wrapper<string>();
 wrapper.set_data("test");
 var data = wrapper.get_data();
 ```
-As you can see, when the data is retrieved from the wrapper, it is assigned to an identifier with no explicit type. This is possible because Vala knows what sort of objects are in each wrapper instance,
-and therefore can do this work for you. 
 
-The fact that Vala does not create multiple classes out of your generic definition means that you can code as follows: 
+Como você pode ver, quando o dado é retornado do envoltório, é atribuido a um identificador sem tipo explicito. Isso é possível porque Vala conhece o tipo de objeto que está em cada instância do envoltório, sendo assim ele pode fazer isso.
+
+O fato que Vala não cria multiplas classes para você pelas suas definições genéricas significa que você pode fazer o código a seguir:
 
 ```vala
 class TestClass : GLib.Object {
@@ -48,4 +47,4 @@ accept_object_wrapper(test_wrapper);
 ...
 ```
 
-Since all "Test``Class" instances are also `Object`s, the "accept\_object\_wrapper" method will happily accept the object it is passed, and treat its wrapped object as though it was a `GLib.Object` instance.
+Desde que todas as instâncias `TestClass` também são `Object`, o método "accept_object_wrapper" irá aceitar qualquer objeto que for passado, e tratar seus objetos envolvidos como instâncias de `GLib.Object`.

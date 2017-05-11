@@ -1,5 +1,6 @@
-# Method Hiding
-By using the `new` modifier you can hide an inherited method with a new method of the same name. The new method may have a different signature. Method hiding is not to be confused with method overriding, because method hiding does not exhibit polymorphic behaviour. 
+# Ocultação de Métodos
+
+Ao usar o modificador `new` você pode ocultar um método herdado com um novo método de mesmo nome. O novo método pode ter uma assinatura diferente. A ocultação de métodos não deve ser confundida com a sobreposição de métodos(_method overriding_), porque a ocultação de métodos não exibe comportamentos polimórficos.
 
 ```vala
 class Foo : Object {
@@ -11,7 +12,7 @@ class Bar : Foo {
 }
 ```
 
-You can still call the original method by casting to the base class or interface: 
+Você ainda pode chamar o método original convertendo para a classe base ou interface:
 
 ```vala
 void main() {

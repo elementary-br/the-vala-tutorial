@@ -1,36 +1,36 @@
 # Interfaces
 
-A class in Vala may implement any number of interfaces. Each interface is a type, much like a class, but one that cannot be instantiated. By "implementing" one or more interfaces, a class may declare that its instances are also instances of the interface, and therefore may be used in any situation where an instance of that interface is expected. 
+Uma classe em Vala pode implementar qualquer número de interfaces. Cada interface é um tipo, como uma classe, mas um que não pode ser instanciado. Por "implementar" uma ou mais interfaces, uma classe pode declarar suas instâncias como instâncias da interface, e portanto pode ser usada em qualquer situação em que uma instância dessa interface é esperada.
 
-The procedure for implementing an interface is the same as for inheriting from classes with abstract methods in - if the class is to be useful it must provide implementations for all methods that are described but not yet implemented. 
+O procedimento para implementar uma interface é o mesmo de herdar de classes com métodos abstratos - se a classe é útil ela deve prover implementações para todos os métodos que são descritos mas não ainda implementados
 
-A simple interface definition looks like: 
+Uma definição simples de interface se parece assim:
 
 ```vala
-public interface ITest : GLib.Object {
-    public abstract int data_1 { get; set; }
-    public abstract void method_1();
+public interface ITeste : GLib.Object {
+    public abstract int dado_1 { get; set; }
+    public abstract void metodo_1();
 }
 ```
 
-This code describes an interface "I``Test" which requires GLib.Object as parent of the implementor class and contains two members. "data\_1" is a property, as described above, except that it is declared `abstract`. Vala will therefore not implement this property, but instead require that classes implementing this interface have a property called "data\_1" that has both `get` and `set` accessors - it is required that this be `abstract` as an interface may not have any data members. The second member "method\_1" is a method. Here it is declared that this method must be implemented by classes that implement this interface.
+Esse código descreve uma interface `ITeste` que requer GLib.Object como pai da classe implementadora e contem dois membros. `dado\_1` é uma propriedade, como descrito acima, exceto que esteja declarado abstrata. Vala irá portanto não implementar a propriedade, mas invés requerer que a classe implementando essa interface tenha uma propriedade chamada `dado_1` que tenha os dois acessores `get` e `set` - é necessário que seja abstrata(`abstract`) pois as interfaces não podem ter dados. O segundo membro `metodo_1` é um método. Aqui é declarado que esse método deve ser implementado pelas classes que implementam essa interface.
 
-The simplest possible full implementation of this interface is: 
+A implementação mais simples possível dessa interface é:
 
 ```vala
-public class Test1 : GLib.Object, ITest {
-    public int data_1 { get; set; }
-    public void method_1() {
+public class Teste1 : GLib.Object, ITeste {
+    public int dado_1 { get; set; }
+    public void metodo_1() {
     }
 }
 ```
 
-And may be used as follows: 
+E pode ser usada como a seguir:
 
 ```vala
-var t = new Test1();
-t.method_1();
+var t = new Teste1();
+t.metodo_1();
 
-ITest i = t;
-i.method_1();
+ITeste i = t;
+i.metodo_1();
 ```

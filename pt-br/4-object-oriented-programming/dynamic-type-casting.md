@@ -1,14 +1,14 @@
-# Dynamic Type Casting
+# Conversão dinâmica de tipo
 
-For the dynamic cast, a variable is casted by a postfix expression `as DesiredTypeName`. Vala will include a runtime type checking to ensure this casting is reasonable - if it is an illegal casting, `null` will be returned. However, this requires both the source type and the target type to be referenced class types. 
+Para a conversão dinâmica, a variável é moldada por uma expressão pósfixa `as NomeDoTipoDesejado`. Vala irá incluir uma checagem de tipo na execução pra assegurar que a conversão é razoável - se for uma conversão ilegal, será retornado `null`. Entretanto, isso requer tanto que o tipo original quanto o alvo sejam classes do tipo referência.
 
-For example, 
+Por exemplo,
 
 ```vala
 Button b = widget as Button;
 ```
 
-If for some reason the class of the `widget` instance is not the Button class or one of its subclasses or does not implement the Button interface, `b` will be `null`. This cast is equivalent to: 
+Se por alguma razão a classe da instância `widget` não é a classe Button ou alguma de suas subclasses ou não implementa a interface Button, `b` será `null`. Essa conversão é equivalente à:
 
 ```vala
 Button b = (widget is Button) ? (Button) widget : null;

@@ -1,23 +1,22 @@
-# Runtime Type Information
+# Informação do tipo em tempo de execução
 
-Since Vala classes are registered at runtime and each instance carries its type information you can dynamically check the type of an object with the `is` operator: 
-
+Desde que as classes Vala são registradas em tempo de execução e cada instância carrega informação do seu tipo você pode checar dinamicamente o tipo de um objeto com o operador `is`:
 
 ```vala
 bool b = object is SomeTypeName;
 ```
 
-You can get the type information of `Object` instances with the `get_type()` method: 
+Você pode receber a informação de tipo de instâncias `Object` com o método `get_type ()`:
 
 ```vala
 Type type = object.get_type();
 stdout.printf("%s\n", type.name());
 ```
 
-With the `typeof()` operator you can get the type information of a type directly. From this type information you can later create new instances with `Object.new()`: 
+Com o operador `typeof ()` você pode receber a informação de um tipo diretamente. Dessa informação de tipo você pode criar novas instâncias com `Object.new ()`:
 
 ```vala
 Type type = typeof(Foo);
 Foo foo = (Foo) Object.new(type);
 ```
-Which constructor will be called? It's the `construct {}` block that will be described in the section about gobject-style construction. 
+Qual construtor será chamado? É o bloco `constuct {}` que será descrito na seção sobre construções do estilo gobject.

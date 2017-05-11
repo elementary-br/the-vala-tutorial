@@ -1,9 +1,8 @@
-# GObject-Style Construction
+# Construção estilo GObject
 
+Vala suporta um esquema alternativo de construção que é levemente diferente dos descritos anteriormente. Esse esquema é mais parecido com o jeito que os GObject são construidos. Qual você vai preferir vai depender se você veio dos lado dos GObjects ou do Java e/ou C\#. O esquema de construção dos GObject introduzem novos elementos sintáticos:
 
-Vala supports an alternative construction scheme that is slightly different to the one described earlier. This scheme is closer to the way GObject construction works. Which one you prefer depends on whether you come from the GObject side or from the Java or C\# side. The gobject-style construction scheme introduces some new syntax elements:
-
-*construct properties*, a special `Object(...)` call and a `construct` block. Let's take a look at how this works: 
+_propriedades de construção_, uma chamada especial `Object(...)` e um bloco `construct`. Vamos dar uma olhada no funcionamento:
 
 ```vala
 public class Person : Object {
@@ -27,15 +26,15 @@ public class Person : Object {
 }
 ```
 
-With the gobject-style construction scheme each construction method only contains an `Object(...)` call for setting so-called *construct properties*. The `Object(...)` call takes a variable number of named arguments in the form of `property: value`. These properties must be declared as `construct` or `set` properties. They will be set to the given values and afterwards all `construct {}` blocks in the hierarchy from *GLib.Object* down to our class will be called.
+Com o esquema de construção do estilo GObject cada método de construção só pode conter uma chamada `Object (...)` para determinar os tão falados _propriedades de construção_(construct properties). A chamada `Object (...)` recebe um variável número de argumentos nomeados na forma de `propriedade: valor`. Essas propriedades precisam ser declaradas como `construct` ou `set`. Elas serão atribuídas com os dados valores e depois todos blocos `construct {}` na hierarquia do _GLib.Object_ abaixo da nossa classe será chamado.
 
-The `construct` block is guaranteed to be called when an instance of this class is created, even if it is created as a subtype. It has no parameters or return value. Within this block you can call other methods and set member variables as needed.
+O bloco `construct` é garantido de ser chamadoquando uma instância da classe é criada, mesmo se ela for criada como um subtipo. Não tem parâmetros ou retorno de valores. Dentro desse bloco você pode chamar outros métodos e atribuir variáveis membros que forem necessárias.
 
-Construct properties are defined just as `get` and `set` properties, and therefore can run arbitrary code on assignment. If you need to do initialisation based on a single construct property, it is possible to write a custom `construct` block for the property, which will be executed immediately on assignment, and before any other construction code. 
+Propriedades de construção são definidas como propriedades `get` e `set`, e portanto podem executar códigos arbitrários na atribuição. Se você precisa fazer inicializações baseado numa única propriedade de construção, é possível escrever um bloco `construct` personalizado para a propriedade, que será executado imediatamente na atribuição, e antes de outros códigos de construção.
 
-If a construct property is declared without `set` it is a so-called *construct only* property, which means it can only be assigned on construction, but no longer afterwards. In the example above *name* is such a construct only property. 
+Se uma propriedade de construção é declarada sem `set` ela será uma tão falada propriedade _somente construção_, que significa que só pode ser atribuida na construção. No exemplo abaixo _name_ é uma propriedade somente construção.
 
-Here's a summary of the various types of properties together with the nomenclature usually found in the documentation of gobject-based libraries: 
+Aqui temos um sumário de vários tipos de propriedades juntas com nomenclaturas usualmente encontradas na documentação de bibliotecas baseadas em GObject.
 
 ```vala
 public int a { get; private set; }    // Read
@@ -45,7 +44,7 @@ public int d { get; set construct; }  // Read / Write / Construct
 public int e { get; construct; }      // Read / Write-Construct-Only
 ```
 
-In some cases you may also want to perform some action - not when instances of a class is created - but when the class itself is created by the GObject runtime. In GObject terminology we are talking about a snippet of code run inside the `class_init` function for the class in question. In Java this is known as *static initializer blocks*. In Vala this looks like: 
+Em alguns casos você também vai querer executar algumas ações - não quando instâncias das classes são criadas - mas quando a classe propriamente dita é criada na execução dos GObject. Na terminologia dos GObject nós estamos falando sobre os trechos de código que rodam dentro da função `class_init` para a classe em questão. Em Java isso é conhecido como _static initializer blocks_(Blocos de inicialização estática). Em Vala isso se parece assim:
 
 ```vala
 /* This snippet of code is run when the class

@@ -1,9 +1,9 @@
-# Mixins and Multiple Inheritance
+# Mixins e mútiplas heranças
 
-As described above, Vala while it is backed by C and GObject, can provide a limited multiple inheritance mechanism, by adding virtual methods to Interfaces. Is possible to add some ways to define default method implementations in interface implementor class and allow derived classes to override that methods. 
+Como descrito antes, Vala enquanto é apoiado em C e GObjects, pode prover um mecanismo limitado de mútipla herança, ai adicionar métodos virtuais as interfaces. É possível adicionar alguns jeitos de definir implementação padrão a métodos em classes implementadoras das interfaces e permitir que classes derivadas sobreponham esses métodos.
 
-If you define a `virtual` method in an interface and implement it in a class, you can't override interface's method without leaving derived classes unable to access to interface default one.
-Consider following code: 
+Se você definir um método `virtual` em uma interface e implementar isso em uma classe, você não pode sobrepor o método da interface sem deixar a classe derivada incapaz de acessar a implementação padrão da interface.
+Considere o caso a seguir:
 
 ```vala
 public interface Callable : GLib.Object {
@@ -39,7 +39,7 @@ public class Phone : Caller {
         stdout.printf ("At Phone.hang()\n");
         return false;
    }
-   
+
    public static void main ()
    {
       var f = (Callable) new Phone ();
@@ -48,7 +48,7 @@ public class Phone : Caller {
          stdout.printf("Hand done.\n");
       else
          stdout.printf("Hand Error!\n");
-      
+
       var t = (Callable) new TechPhone ();
       t.answer ();
       if (t.hang ())
@@ -60,14 +60,13 @@ public class Phone : Caller {
 }
 ```
 
-In this case, we have defined a `Callable` interface with a default implementation for `abstract bool hang ()` called `default_hang`, it could be a `static` or `virtual` method. Then `Caller` is a base class implementing `Callable` for the `TechPhone` and `Phone` classes, while `Caller`'s `hang ()` method simple call `Callable` default implementation. `TechPhone` doesn't do anything and just takes `Caller` as base class, using the default method implementations; but `Phone` overrides `Caller.hang ()` and this makes to use its own implementation, allowing to always call it even if it is cast to `Callable` object.
+Nesse caso, nós definimos uma interface `Callable` com uma implementação padrão para `abstract bool hang ()` chamada `default_hang`, ela pode ser um método `static` ou `virtual`. Então `Caller` é a classe base implementando `Callable` para as classes `TechPhone` e `Phone`, enquanto o método `hang ()` da `Caller` usa a implementação padrão de `Callable`. `TechPhone` não faz nada e pega `Caller` como classe base, usando a implementação padrão do método, mas `Phone` sobrepõe `Caller.hang ()` e isso faz com que ele usa sua própria implementação, permitindo sempre chama-lo mesmo se for convertido em um objeto `Callable`.
 
-##### Explicit method implementation
+##### Implementação explícita de método
 
-The explicit interface method implementation allows to implement two interfaces that have methods (not properties) with the same name.
+A implementação explicita de métodos de interface permite que sejam implementadas duas interfaces que tenham os mesmos métodos (não propriedades) com o mesmo nome.
 
-Example: 
-
+Exemplo:
 
 ```vala
 interface Foo {
@@ -94,4 +93,4 @@ void main () {
 }
 ```
 
-Will output 10 bar. 
+A saída será 10 bar.

@@ -1,56 +1,56 @@
-# Virtual Methods
+# Métodos virtuais
 
-A `virtual` method allows to define default implementations to `abstract` classes and allows to derived classes to override its behavior, this is different than hiding methods. 
+Um método `virtual` permite que sejam definidas implementações padrão para classes `abstract`(abstratas) e permitem que uma classe filha sobreponha seu comportamento, isso é diferente de esconder métodos.
 
 ```vala
-public abstract class Caller : GLib.Object {
-   public abstract string name { get; protected set; }
-   public abstract void update (string new_name);
-   public virtual bool reset ()
+public abstract class Discador : GLib.Object {
+   public abstract string nome { get; protected set; }
+   public abstract void atualizar (string novo_nome);
+   public virtual bool restaurar ()
    {
-      name = "No Name";
+      nome = "Sem nome";
       return true;
    }
 }
 
-public class ContactCV : Caller
+public class ContatoCV : Discador
 {
-   public override string name { get; protected set; }
-   public override void update (string new_name)
+   public override string nome { get; protected set; }
+   public override void atualizar (string novo_nome)
    {
-     name = "ContactCV - " + new_name;
+     nome = "ContatoCV - " + novo_nome;
    }
-   public override bool reset ()
+   public override bool restaurar ()
    {
-      name = "ContactCV-Name";
-      stdout.printf ("CotactCV.reset () implementation!\n");
+      nome = "ContatoCV-Nome";
+      stdout.printf ("CotatoCV.restaurar () implemetação!\n");
       return true;
    }
 }
 
-public class Contact : Caller {
-   public override string name { get; protected set; }
-   public override void update (string new_name)
+public class Contato : Discador {
+   public override string nome { get; protected set; }
+   public override void atualizar (string novo_nome)
    {
-     name = "Contact - " + new_name;
+     name = "Contato - " + novo_nome;
    }
-   
+
    public static void main ()
    {
-      var c = new Contact ();
-      c.update ("John Strauss");
-      stdout.printf(@"Name: $(c.name)\n");
-      c.reset ();
-      stdout.printf(@"Reset Name: $(c.name)\n");
-      
-      var cv = new ContactCV ();
-      cv.update ("Xochitl Calva");
-      stdout.printf(@"Name: $(cv.name)\n");
-      cv.reset ();
-      stdout.printf(@"Reset Name: $(cv.name)\n");
-      stdout.printf("END\n");
+      var c = new Contato ();
+      c.atualizar ("John Strauss");
+      stdout.printf(@"Nome: $(c.nome)\n");
+      c.restaurar ();
+      stdout.printf(@"Restaurar Nome: $(c.nome)\n");
+
+      var cv = new ContatoCV ();
+      cv.atualizar ("Xochitl Calva");
+      stdout.printf(@"Nome: $(cv.nome)\n");
+      cv.restaurar ();
+      stdout.printf(@"Restaurar Nome: $(cv.nome)\n");
+      stdout.printf("FIM\n");
    }
 }
 ```
 
-As you can see in the above example, `Caller` is an `abstract` class defining both an abstract property and a method, but adds a `virtual` method which can be overridden by derived classes. `Contact` class implements abstract methods and properties of `Caller`, while using the default implementation for `reset()` by avoiding to define a new one. `ContactCV` class implements all abstract definitions on `Caller`, but overrides `reset()` so as to define its own implementation. 
+Como você pode ver no exemplo acima, `Discador` é uma classe abstrata(`abstract`) definindo uma propriedade abstrata e um método abstrato, mas adiciona um método `virtual` que pode ser sobreposto pela classe derivada. A classe `Contato` implementa métodos e propriedades abstratas de `Discador`, enquanto usa a implementação padrão de `restaurar()` por não definir uma nova. A classe `ContatoCV` implemeta todas as definições abstratas do `Discador`, mas sobrepõe `restaurar()` para definir uma implementação própria.

@@ -1,164 +1,161 @@
 # Propriedades
 
-É uma boa prática de orientação à objetos ocultar detalhes da implementação para os úsuarios de suas classes([])
-It is good object oriented programming practice to hide implementation details from the users of your classes ([information hiding principle](http://en.wikipedia.org/wiki/Information_hiding)), so you can later change the internals without breaking the public API. One practice is to make fields private and provide accessor methods for getting and setting their values (getters and setters).
+É uma boa prática de orientação à objetos ocultar detalhes da implementação para os úsuarios de suas classes([Princípio de ocultação de informações(em inglês)](http://en.wikipedia.org/wiki/Information_hiding)), então você pode depois mudar os internos sem quebrar a API pública. Uma pratica é tornar os campos privados e prover métodos de acessos para pegar e determinar os seus valores(getters e setters).
 
-If you're a Java programmer you will probably think of something like this:
+Se você é um programador Java você vai provavelmente pensar em algo assim:
 
 ```vala
-class Person : Object {
-    private int age = 32;
+class Pessoa : Object {
+    private int idade = 32;
 
-    public int get_age() {
-        return this.age;
+    public int get_idade() {
+        return this.idade;
     }
 
-    public void set_age(int age) {
-        this.age = age;
-    }
-}
-```
-
-This works, but Vala can do better. The problem is that these methods are cumbersome to work with. Let's suppose that you want to increase the age of a person by one year:
-
-```vala
-var alice = new Person();
-alice.set_age(alice.get_age() + 1);
-```
-
-This is where properties come into play:
-
-```vala
-class Person : Object {
-    private int _age = 32;  // underscore prefix to avoid name clash with property
-
-    /* Property */
-    public int age {
-        get { return _age; }
-        set { _age = value; }
+    public void set_idade(int idade) {
+        this.idade = idade;
     }
 }
 ```
 
-This syntax should be familiar to C\# programmers. A property has a `get` and a `set` block for getting and setting its value. `value` is a keyword that represents the new value that should be assigned to the property.
-
-Now you can access the property as if it was a public field. But behind the scenes the code in the get and set blocks is executed.
+Isso funciona, mas Vala pode fazer melhor. O problema é que esses métodos são incomodos de se trabalhar. Vamos supor que você quer incrementar a idade da pessoa em um ano:
 
 ```vala
-var alice = new Person();
-alice.age = alice.age + 1;  // or even shorter:
-alice.age++;
+var alice = new Pessoa();
+alice.set_idade(alice.get_idade() + 1);
 ```
 
-If you only do the standard implementation as shown above then you can write the property even shorter:
+É aqui que as propriedades entram em ação:
 
 ```vala
-class Person : Object {
-    /* Property with standard getter and setter and default value */
-    public int age { get; set; default = 32; }
-}
-```
+class Pessoa : Object {
+    private int _idade = 32;  // prefixo sublinhado para evitar um cruzamento de nome com a propriedade
 
-With properties you can change the internal working of classes without changing the public API. For example:
-
-```vala
-static int current_year = 2525;
-
-class Person : Object {
-    private int year_of_birth = 2493;
-
-    public int age {
-        get { return current_year - year_of_birth; }
-        set { year_of_birth = current_year - value; }
+    /* Propriedade */
+    public int idade {
+        get { return _idade; }
+        set { _idade = value; }
     }
 }
 ```
 
-This time the age is calculated on the fly from the year of birth. Note that you can do more than just simple variable access or assignment within the get and set blocks. You could do a database access, logging, cache updates, etc.
+Essa sintaxe deve ser familiar a programadores C\#. A propriedade tem um `get` e um `set` para inserir e retornar seu valor. `value` é uma palavra chave que representa o novo valor que deve ser atribuído a propriedade.
 
-If you want to make a property read-only for the users of the class you should make the setter private:
-
+Agora você pode acessar a propriedade como se ela fosse um campo público. Mas por trás das cenas o código é executado pelos setters e getters.
 
 ```vala
-    public int age { get; private set; default = 32; }
+var alice = new Pessoa();
+alice.idade = alice.idade + 1;  // ou até mais curto:
+alice.idade++;
 ```
 
-Or, alternatively, you can leave out the set block:
+Se você só faz a implementação padrão como mostrada acima você pode escrever as propriedades de maneira mais curta:
 
 ```vala
-class Person : Object {
-    private int _age = 32;
+class Pessoa : Object {
+    /* Propriedade com um getter e setter e valor padrão */
+    public int idade { get; set; default = 32; }
+}
+```
 
-    public int age {
-        get { return _age; }
+Com propriedades você pode mudar o trabalho interno das classes sem mudar sua API pública. Por exemplo:
+
+```vala
+static int ano_atual = 2525;
+
+class Pessoa : Object {
+    private int ano_de_nascimento = 2493;
+
+    public int idade {
+        get { return ano_atual - ano_de_nascimento; }
+        set { ano_de_nascimento = ano_atual - value; }
     }
 }
 ```
 
-Properties may not only have a name but also a short description (called *nick*) and a long description (called *blurb*). You can annotate these with a special attribute:
+Agora a idade é calculada na hora pelo ano de nascimento. Note que você pode fazer mais que acessar uma simples variavel ou atribuição com os blocos get e set. Você poderia fazer um acesso à banco de dados, logs, atualizações de cache, etc.
+
+Se você quer fazer uma propriedade somente-leitura para os usuarios da classe você deve fazer o setter privado:
 
 ```vala
-    [Description(nick = "age in years", blurb = "This is the person's age in years")]
+    public int idade { get; private set; default = 32; }
+```
+
+Ou alternativamente, você pode deixar o bloco set de fora:
+
+```vala
+class Pessoa : Object {
+    private int _idade = 32;
+
+    public int idade {
+        get { return _idade; }
+    }
+}
+```
+
+Propriedades podem não apenas ter um nome mas também uma curta descrição(chamado _nick_) e uma descrição longa(chamada _blurb_). Você pode anotar esses com um atributo especial:
+
+```vala
+    [Description(nick = "idade em anos", blurb = "Essa é a idade da pessoa em anos")]
     public int age { get; set; default = 32; }
 ```
 
-Properties and their additional descriptions can be queried at runtime. Some programs such as the [Glade](http://glade.gnome.org/) graphical user interface designer make use of this information. In this way Glade can present human readable descriptions for properties of GTK+ widgets.
+Propriedades e suas descrições adicionais podem ser requeridas em tempo de execução. Alguns programas como a ferramenta gráfica de design de interfaces de usuario [Glade](http://glade.gnome.org/) faz uso dessa informação. Dessa forma Glade pode mostrar descrições legíveis por humanos para propriedades dos widgets GTK+.
 
-Every instance of a class derived from `GLib.Object` has a signal called `notify`. This signal gets emitted every time a property of its object changes. So you can connect to this signal if you're interested in change notifications in general:
+Toda instancia de uma classe derivada da `GLib.Object` tem um sinal chamado `notify`. Esse sinal é emitido toda vez que uma propriedade de seus objetos muda. Então você pode conectar a esse sinal se estiver interessado nas notificações de mudanças em geral:
 
 ```vala
 obj.notify.connect((s, p) => {
-    stdout.printf("Property '%s' has changed!\n", p.name);
+    stdout.printf("A propriedade '%s' mudou!\n", p.nome);
 });
 ```
 
-`s` is the source of the signal (`obj` in this example), `p` is the property information of type *ParamSpec*
-for the changed property. If you're only interested in change notifications of a single property you can use this syntax:
+`s` é a origem do sinal (`obj` nesse exemplo), `p` é a informação da propriedade do tipo _ParamSpac_ para a propriedade mudada. Se você só está interessado nas notificações de mudança de uma única propriedade você pode usar essa sintaxe:
 
 ```vala
-alice.notify["age"].connect((s, p) => {
-    stdout.printf("age has changed\n");
+alice.notify["idade"].connect((s, p) => {
+    stdout.printf("idade mudou\n");
 });
 ```
 
-Note that in this case you must use the string representation of the property name where underscores are replaced by dashes: `my_property_name` becomes `"my-property-name"` in this representation, which is the GObject property naming convention.
+Note que nesse caso você precisa usar a representação verbal do nome da propriedade aonde sublinhas são substituidas por traços:
+`nome_da_propriedade` se torna `nome-da-propriedade` nessa representação, que é a convenção de nomeação de propriedades nos GObjects.
 
-Change notifications can be disabled with a `CCode` attribute tag immediately before the declaration of the property:
-
+A notificação de mudanças pode ser desabilitada com um atributo `CCode` imediatamente antes da declaração da propriedade:
 
 ```vala
 public class MyObject : Object {
     [CCode(notify = false)]
-    // notify signal is NOT emitted upon changes in the property
-    public int without_notification { get; set; }
-    // notify signal is emitted upon changes in the property
-    public int with_notification { get; set; }
+    // sinal notify NÃO é emitido nas mudanças da propriedade
+    public int sem_notificacao { get; set; }
+    // sinal notify é emitido nas mudanças da propriedade
+    public int com_notificacao { get; set; }
 }
 ```
 
-There's another type of properties called *construct properties* that are described later in the section about gobject-style construction.
+Há outro tipo de propriedades chamado propriedades de construção(_construct properties_) que são descritos depois na seção sobre construção no estilo gobject.
 
-Note: in case your property is type of struct, to get the property value with Object.get(), you have to declare your variable as example below
+Nota: no caso de sua propriedade ser do tipo struct, para receber o valor da propriedade com Object.get(), você tem que declarar sua variável como no exemplo abaixo
 
 ```vala
-struct Color
+struct Cor
 {
     public uint32 argb;
 
-    public Color() { argb = 0x12345678; }
+    public Cor() { argb = 0x12345678; }
 }
 
-class Shape: GLib.Object
+class Forma: GLib.Object
 {
-    public Color c { get; set; default = Color(); }
+    public Cor c { get; set; default = Cor(); }
 }
 
 int main()
 {
-    Color? c = null;
-    Shape s = new Shape();
-    s.get("c", out c);
+    Cor? c = null;
+    Forma f = new Forma();
+    f.get("c", out c);
 }
 ```
 
-This way, c is a reference instead of an instance of Color on stack. What you passed into s.get() is "Color \*\*" instead of "Color \*".
+Dessa forma, c é uma referência invés de uma instancia de Cor no stack. O que você passou ao s.get() é "Cor \*\*" invés de "Cor \*".

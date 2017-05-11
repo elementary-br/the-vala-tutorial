@@ -1,41 +1,41 @@
-# Inheritance
+# Herança
 
-In Vala, a class may derive from one or zero other classes. In practice this is always likely to be one, although there is no implicit inheritance as there is in languages like Java. 
+Em Vala, uma classe pode derivar de uma ou zero outras classes. Na prática é provável que este seja um, embora não haja herança implícita como em linguagens como Java.
 
-When defining a class that inherits from another, you create a relationship between the classes where instances of the subclass are also instances of the superclass. This means that operations on instances of the superclass are also applicable on instances of the subclass. As such, wherever an instance of the superclass is required, an instance of the subclass can be substituted. 
+Quando se define uma classe que herda de outra, você cria um relacionamento entre as classes onde as intâncias da subclasse também são instancias da superclasse. Isso significa que operações em instancias da superclasse são também aplicáveis em instancias da subclasse. Sendo assim, quando uma instancia da superclasse é requerida, uma instancia da subclasse pode ser usada.
 
-When writing the definition of a class it is possible to exercise precise control over who can access what methods and data in the object. The following example demonstrates a range of these options: 
+Quando se escreve a definição de uma classe é possível exercer controle preciso sobre quem pode acessar quais métodos e dados no objeto. O exemplo a seguir demostra um série dessas opções:
 
 ```vala
-class SuperClass : GLib.Object {
+class SuperClasse : GLib.Object {
 
-    private int data;
+    private int dado;
 
-    public SuperClass(int data) {
-        this.data = data;
+    public SuperClasse(int dado) {
+        this.dado = dado;
     }
 
-    protected void protected_method() {
+    protected void metodo_protegido() {
     }
 
-    public static void public_static_method() {
+    public static void metodo_publico_estatico() {
     }
 }
 
-class SubClass : SuperClass {
+class SubClasse : SuperClasse {
 
-    public SubClass() {
+    public SubClasse() {
         base(10);
     }
 }
 ```
 
-*data* is an instance data member of *SuperClass*. There will be a member of this type in every instance of *SuperClass*, and it is declared `private` so will only be accessible by code that is a part of *SuperClass*. 
+_dado_ é um dado membro da _SuperClasse_. Vai ter um membro desse tipo em qualquer instância da _SuperClasse_, e é é declarado `privado` então só vai ser acessível pelo código que é parte da _SuperClasse_.
 
-*protected\_method* is an instance method of *SuperClass*. You will be able to execute this method only an instance of *SuperClass* or of one of its subclasses, and only from code that belongs to *SuperClass* or one of its subclasses - this latter rule being the result of the `protected` modifier. 
+_metodo\_protegido_ é um método instancia da _SuperClasse_. Você poderá executar esse método apenas em uma instancia da _SuperClasse_ ou em uma de suas subclasses, e só no código que pertence a _SuperClasse_ ou uma de suas subclasses - Essa ultima regra é o resultado do modificador `protected`.
 
-*public\_static\_method* has two modifiers. The `static` modifier means that this method may be called without owning an instance of *SuperClass* or of one of its subclasses. As a result, this method will not have access to a `this` reference when it is executed. The `public` modifier means that this method can be called from any code, no matter its relationship with *SuperClass* or its subclasses. 
+_metodo\_publico\_estatico_ tem dois modificadores. O modificador `static` significa que esse método pode ser chamado sem posse de uma instancia da _SuperClasse_ ou uma de suas subclasses. Como resultado, esse método não terá acesso a referencia `this` quando for executada. O modificador `public` significa que esse método pode ser chamado em qualquer código, não importando o relacionamento com a _SuperClasse_ ou suas subclasses.
 
-Given these definitions, an instance of *SubClass* will contain all three members of *SuperClass*, but will only be able to access the non-private members. External code will only be able to access the public method. 
+Dadas estas definições, uma instância de _SubClasse_ vai conter todos os três membros da _SuperClasse_, mas irá somente ser capaz de acessar membros não-privados. Código externo só poderá acessar o método público.
 
-With `base` a constructor of a subclass can chain up to a constructor of its base class. 
+Com `base` um construtor da subclasse pode encadear um construtor de sua classe base.

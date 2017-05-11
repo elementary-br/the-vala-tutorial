@@ -1,6 +1,6 @@
-# Basics
+# Básicos
 
-A simple class may be defined as follows: 
+Uma simples classe pode ser definida como a seguir:
 
 ```vala
 public class TestClass : GLib.Object {
@@ -22,25 +22,24 @@ public class TestClass : GLib.Object {
 }
 ```
 
-This code will define a new type (which is registered automatically with the *gobject* library's type system) that contains three members. There are two data members, the integers defined at the top, and one method called *method\_1*, which returns an integer. The class declaration states that this class is a subclass of *GLib.Object*, and therefore instances of it are also *Objects*, and contain all the members of that type also. The fact that this class is descended from *Object* also means that there are special features of Vala that can be used to easily access some of *Object's* features. 
+Esse código vai definir um novo tipo (que será registrado automaticamente com o sistema de tipos da biblioteca _gobject_) que contem três membros. Existem também dois membros dado, um inteiro definido no começo, e um método chamado _method\1_, que retorna uma integer. A declaração de classe dita que essa classe é uma subclasse de _GLib.Object_, e portanto instâncias dela também são _Objects_, e contém também todos os membros desse tipo. O fato dessa classe descender do _GObject_ também significa que existem recursos especiais em Vala que podem ser usados para acessar fácilmente alguns recursos do _Object_.
 
-This class is described as `public` (by default, classes are `internal`). The implication of this is that it can referenced directly by code outside of this file - if you are a C programmer of glib/gobject, you will recognise this as being equivalent to defining the class interfaces in a header file that other code can include. 
+Essa classe é descita como `public` (por padrão, classes são `internal`). A implicação disso é que pode ser referenciada diretamente pelo código de fora do arquivo - se você é um programador C da glib/gobject, você vai reconhecer isso como sendo equivalente a definir interfaces de classes em um header que outro código pode incluir.
 
-The members are also all described as either `public` or `private`. The member *first\_data* is `public`, so it is visible directly to any user of the class, and can be modified without the containing instance being aware of it. The second data member is `private`, and so can only be referenced by code belonging to this class. Vala supports four different access modifiers:
+Esses membros também são descritos como `public` ou `private`, público e privado respectivamente. O membro _first\_data_ é `public`, então é visível diretamente para qualquer usuario da classe, e pode ser modificado sem conter uma instância estando ciente disso. O segundo dado membro é `private`, sendo assim só pode ser referenciado por um código pertencente a esta classe. Vala suporta quatro modificadores de acesso diferentes:
 
-
-| Modifier | Description |
+| Modificador | Descrição |
 |---|---|
-| `public` | No restrictions to access |
-| `private` | Access is limited to within the class/struct definition. This is the default if no access modifier is specified. |
-| `protected` | Access is limited to within the class definition and any class that inherits from the class |
-| `internal`  | Access is limited eclusively to classes defined within the same package |
+| `public` | Sem restrições de acesso |
+| `private` | Acesso é limitado a definição da classe/estrutura(struct). Esse é o padrão se nenhum modificador de acesso é especificado. |
+| `protected` | Acesso é limitado a definição da classe e qualquer classe que herde dela |
+| `internal`  | Accesso é limitado a classes definidas dentro do mesmo pacote |
 
-The constructor initialises new instances of a class. It has the same name as the class, may take zero or more arguments and is defined without return type. 
+O construtor incializa uma nova instância da classe. Ele tem o mesmo nome da classe, pode ter zero ou mais argumentos e é definido sem tipo de retorno.
 
-The final part of this class is a method definition. This method is to be called *method\_1*, and it will return an integer. As this method is not static, it can only be executed on an instance of this class, and may therefore access members of that instance. It can do this through the `this` reference, which always points to the instance the method is being called on. Unless there is an ambiguity, the `this` identifier can be omitted if wished. 
+A parte final dessa classe é uma definição de método. Esse método é chamado _method\1_, e retornará um inteiro. Como esse método não é estático, ele só pode ser executado numa instância dessa classe, e pode acessar membros da instância. Ele pode fazer isso pela referência `this`, que sempre aponta para a instância em que o método é chamado. A não ser que exista ambiguidade, o identificador `this` pode ser omitido se desejado.
 
-You can use this new class as follows: 
+Você pode usar essa nova classe da forma seguir:
 
 ```vala
 TestClass t = new TestClass();

@@ -22,8 +22,9 @@ main () {
 	sanity_test
 	file_test
 	test_result
-	# TODO
-	# if fails < 0 return error :)
+	if ( test ${fails} -gt "0" ); then
+		return 1
+	fi
 }
 
 main

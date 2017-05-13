@@ -1,4 +1,4 @@
-# Sumário
+# Summary
 
 * [Introdução](README.md)
    * [O que é vala?](1-introduction/what-is-vala.md)
@@ -44,11 +44,11 @@
        * [Propriedades](4-object-oriented-programming/4.2-oop-interfaces/properties-oop.md)
        * [Mixins e mútiplas heranças](4-object-oriented-programming/4.2-oop-interfaces/mixins-and-multiple-inheritance.md)
    * [Polimorfismo](4-object-oriented-programming/polymorphism.md)
-   * [Método escondido](4-object-oriented-programming/method-hiding.md)
+   * [Ocultação de Métodos](4-object-oriented-programming/method-hiding.md)
    * [Informação do tipo em tempo de execução](4-object-oriented-programming/run-time-type-information.md)
-   * [Conversão de tipo dinâmico](4-object-oriented-programming/dynamic-type-casting.md)
+   * [Conversão dinâmica de tipo](4-object-oriented-programming/dynamic-type-casting.md)
    * [Genéricos](4-object-oriented-programming/generics.md)
-   * [Construtor GObject-Style](4-object-oriented-programming/gobject-style-construction.md)
+   * [Construção estilo GObject](4-object-oriented-programming/gobject-style-construction.md)
 * [Recursos avançados](5-advanced-features/README.md)
    * [Programação de contrato e declaração](5-advanced-features/assertions-and-contract-programming.md)
    * [Tratamento de erro](5-advanced-features/error-handling.md)

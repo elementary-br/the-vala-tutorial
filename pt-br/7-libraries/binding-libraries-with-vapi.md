@@ -7,5 +7,3 @@ O processo de criar geralmente equivale a três etapas,
 -   Executar *vala-gen-introspect* para extrair metadados da biblioteca C.
 -   Adicionar metadados extras para padronizar a interface ou fazer várias outras alterações.
 -   Gerar um arquivo VAPI das fontes acima usando *vapigen*.
-
-Instruções específicas sobre como gerar bindings estão no [Vala Bindings Tutorial](/Projects/Vala/Bindings)

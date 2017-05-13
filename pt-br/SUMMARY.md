@@ -76,7 +76,7 @@
    * [Classes sem objeto](5-advanced-features/non-object-classes.md)
    * [Integração com D-Bus](5-advanced-features/d-bus-integration.md)
    <!-- * [Profiles](5-advanced-features/advanced-features.md/#Profiles) -->
-* [Recursos esperimentais](6-experimental-features/README.md)
+* [Recursos experimentais](6-experimental-features/README.md)
    * [Relação encadeada](6-experimental-features/chained-relational.md)
    * [Expressão regular literal](6-experimental-features/regular-expression-literals.md)
    * [Modo não-nulo rigoroso](6-experimental-features/strict-non-null-mode.md)

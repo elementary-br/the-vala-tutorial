@@ -69,5 +69,3 @@ if ("ere" in "Able was I ere I saw Elba.") ...
 ```
 
 Para mais informações, veja [uma visão completa da classe string](http://www.valadoc.org/glib-2.0/string.html).
-
-Um [programa exemplo](/Projects/Vala/StringSample) demostrando o uso de uma string também está disponível.
